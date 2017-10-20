@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ToggleWorkSpaceService} from '../toggle-work-space.service';
+import {NavtabService} from './nav-tab/navtab.service';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -7,7 +9,7 @@ import {ToggleWorkSpaceService} from '../toggle-work-space.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public toggleWorkSpaceService: ToggleWorkSpaceService) {
+  constructor(public toggleWorkSpaceService: ToggleWorkSpaceService, public navtabService: NavtabService) {
   }
 
   ngOnInit() {
@@ -15,5 +17,6 @@ export class NavComponent implements OnInit {
 
   workspacehidden() {
     this.toggleWorkSpaceService.workSpaceIsShow = false;
+    this.navtabService.selectId = '';
   }
 }
