@@ -1,0 +1,170 @@
+<div class="dialog-wallpaper">
+    <div class="dialog-container">
+        <span class="closeDialog " (click)="closeme('close')">
+            <b class="fa fa-w fa-close"></b>
+        </span>
+        <div class="dialog-content">
+            <div class="content-title" style="margin-top: 0">
+                <p>基本信息</p>
+            </div>
+            <div class="user-info">
+                <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="tableValue">
+                    <p-column field="sbbh" header="水表编号"></p-column>
+                    <p-column field="zwn" header="账务年"></p-column>
+                    <p-column field="zwy" header="账务月"></p-column>
+                    <p-column field="kzsl" header="开账水量"></p-column>
+                    <p-column field="kzje" header="开账金额"></p-column>
+                    <p-column field="hm" header="户名"></p-column>
+                    <p-column field="dz" header="地址" [style]="{'width':'200px'}"></p-column>
+                </p-dataTable>
+            </div>
+            <div class="content-title">
+                <p>未销调整</p>
+            </div>
+            <form class="form-horizontal">
+                <div class="ui-g ">
+                    <div class="ui-g-4">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">原始水量</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="RawWater"
+                                       disabled [(ngModel)]="rawWater">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">调整水量</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="ChangeWater"
+                                       [(ngModel)]="changeWater" (change)="sliderChange()">
+                                <p-slider [(ngModel)]="changeWater"
+                                          [style]="{'width':'100%','marginTop':'6px','height':'0.8em'}"
+                                          [min]="0" [max]="rawWater" (onChange)="sliderChange()"
+                                          name="slideChangeWater"></p-slider>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">保留水量</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="AfterWater"
+                                       disabled [(ngModel)]="rawWater-changeWater">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-1"></div>
+                    <div class="ui-g-4">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">调整原因</label>
+                            <div class="col-sm-8">
+                                <p-dropdown name="AdjustmentReason" placeholder="选择调整原因"
+                                            [options]="adjustmentReason" [style]="{'width':'150px'}"
+                                            [(ngModel)]="selectedAdjustmentReason"></p-dropdown>
+                            </div>
+                        </div>
+                        <div class="form-group" *ngIf="selectedAdjustmentReason=='04'">
+                            <label class="text-left-imp col-sm-4 control-label">其他</label>
+                            <div class="col-sm-8">
+                                <textarea pInputTextarea [(ngModel)]="adjustmentReasonOther" name="AdjustmentReasonOther"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ui-g-1"></div>
+                    <div class="ui-g-2">
+                        <div class="my-btn-group">
+                            <button pButton type="button" label="执行" class="ui-button-warning" icon="fa fa-edit"
+                                    iconPos="left" (click)="confirm()" #btnZX></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="content-title">
+                <p>调整预览</p>
+            </div>
+            <div class="ui-g ui-g-nopad">
+                <div class="ui-g-4 ">
+                    <div class="data-details-box">
+                        <div class="data-details-tip">
+                            <p>原始水量详情</p>
+                        </div>
+                        <div class="data-details-title">
+                            <p>费用名称</p>
+                            <p>价格</p>
+                            <p>水量</p>
+                            <p>金额</p>
+                        </div>
+                        <div class="data-details-body">
+                            <div class="item" *ngFor="let item of rawData;let index =index;">
+                                <p>{{item.name}}</p>
+                                <p>{{item.pri}}</p>
+                                <p>{{item.water}}</p>
+                                <p>{{(item.water*item.pri).toFixed(2)}}</p>
+                            </div>
+                            <div class="item">
+                                <p>合计</p>
+                                <p></p>
+                                <p>{{rawDataSummary.water}}</p>
+                                <p>{{(rawDataSummary.pri).toFixed(2)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-4 ">
+                    <div class="data-details-box">
+                        <div class="data-details-tip">
+                            <p>调整水量详情</p>
+                        </div>
+                        <div class="data-details-title">
+                            <p>费用名称</p>
+                            <p>价格</p>
+                            <p>水量</p>
+                            <p>金额</p>
+                        </div>
+                        <div class="data-details-body">
+                            <div class="item" *ngFor="let item of changeData;let index =index;">
+                                <p>{{item.name}}</p>
+                                <p>{{item.pri}}</p>
+                                <p>{{item.water}}</p>
+                                <p>{{(item.water*item.pri).toFixed(2)}}</p>
+                            </div>
+                            <div class="item">
+                                <p>合计</p>
+                                <p></p>
+                                <p>{{changeDataSummary.water}}</p>
+                                <p>{{(changeDataSummary.pri).toFixed(2)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-4 ">
+                    <div class="data-details-box">
+                        <div class="data-details-tip">
+                            <p>保留水量详情</p>
+                        </div>
+                        <div class="data-details-title">
+                            <p>费用名称</p>
+                            <p>价格</p>
+                            <p>水量</p>
+                            <p>金额</p>
+                        </div>
+                        <div class="data-details-body">
+                            <div class="item" *ngFor="let item of afterData;let index =index;">
+                                <p>{{item.name}}</p>
+                                <p>{{item.pri}}</p>
+                                <p>{{item.water}}</p>
+                                <p>{{(item.water*item.pri).toFixed(2)}}</p>
+                            </div>
+                            <div class="item">
+                                <p>合计</p>
+                                <p></p>
+                                <p>{{afterDataSummary.water}}</p>
+                                <p>{{(afterDataSummary.pri).toFixed(2)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

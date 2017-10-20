@@ -1,0 +1,57 @@
+<div class="wallpaper">
+  <div #child1 class="card card75 hidden-y">
+    <div class="box echart-box">
+      <div class="box-title">
+        <p>水司概况</p>
+        <form class="form-inline" id="from-zwny">
+          <div class="form-group">
+            <label>账务年月:</label>
+            <p-dropdown class="text-center" [options]="zwnyY" [(ngModel)]="selectedY"
+                        name="zwnyY"></p-dropdown>
+            <p-dropdown class="text-center" [options]="zwnyM" [(ngModel)]="selectedM"
+                        name="zwnyM"></p-dropdown>
+          </div>
+          <button pButton type="button" label="查 询"></button>
+        </form>
+      </div>
+      <div class="box-body homeEchart" #homeEchart></div>
+      <app-echartdetails *ngIf="isShowDetails" (pleaseClose)="closeDetails(msg)"
+                         [data]="detailData"></app-echartdetails>
+    </div>
+  </div>
+  <div #child2 class="card card25">
+    <div class="box top10">
+      <div class="box-title">
+        <p>水司回收率排行榜</p>
+      </div>
+      <div class="box-body hidden-y">
+        <div class="top10-title">
+          <p>排名</p>
+          <p>水司名称</p>
+          <p>月收入金额</p>
+          <p>月售水量</p>
+          <p>回收率</p>
+        </div>
+        <div class="top10-item" *ngFor="let item of top10;let index = index">
+          <p><span class="orderNum">{{item.orderNum}}</span></p>
+          <p>{{item.cname}}</p>
+          <p>{{item.monthIncome}}</p>
+          <p>{{item.monthSL}}</p>
+          <p>{{item.recovery}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div #child3 class="card card25">
+    <div class="box">
+      <div class="box-title">
+        <p>常用功能</p>
+      </div>
+      <div class="box-body">
+        <app-cygn [parentComponent]="'homemaster'"></app-cygn>
+      </div>
+    </div>
+  </div>
+</div>
+
+

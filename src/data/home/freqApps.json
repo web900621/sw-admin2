@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "name": "走收",
+            "id": "zs",
+            "imgSrc": "../../../assets/imgs/appIcon/zs.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/zs.png"
+        },
+        {
+            "name": "客户信息管理",
+            "id": "khxxgl",
+            "imgSrc": "../../../assets/imgs/appIcon/khxxgl.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/khxxgl.png"
+        },
+        {
+            "name": "营业户信息管理",
+            "id": "yyhxxgl",
+            "imgSrc": "../../../assets/imgs/appIcon/yyhxxgl.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/yyhxxgl.png"
+        },
+        {
+            "name": "量测点信息管理",
+            "id": "lcdxxgl",
+            "imgSrc": "../../../assets/imgs/appIcon/lcdxxgl.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/lcdxxgl.png"
+        },
+        {
+            "name": "手工录入",
+            "id": "sglr",
+            "imgSrc": "../../../assets/imgs/appIcon/sglr.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/sglr.png"
+        },
+        {
+            "name": "发票作废",
+            "id": "fpzf",
+            "imgSrc": "../../../assets/imgs/appIcon/fpzf.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/fpzf.png"
+        },
+        {
+            "name": "呆账处理",
+            "id": "dzcl",
+            "imgSrc": "../../../assets/imgs/appIcon/dzcl.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/dzcl.png"
+        },
+        {
+            "name": "水价管理",
+            "id": "sjgl",
+            "imgSrc": "../../../assets/imgs/appIcon/sjgl.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/sjgl.png"
+        },
+        {
+            "name": "柜台收费",
+            "id": "gtsf",
+            "imgSrc": "../../../assets/imgs/appIcon/gtsf.png",
+            "imgNavSrc": "../../../../assets/imgs/appNavIcon/gtsf.png"
+        }
+    ]
+}

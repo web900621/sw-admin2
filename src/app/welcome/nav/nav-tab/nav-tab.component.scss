@@ -1,0 +1,58 @@
+@import "../../../../assets/color-style";
+.nav-in-tab{
+  width: 500px;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+}
+.nav-item{
+  position: relative;
+  box-sizing: border-box;
+  float: left;
+  min-width: 80px;
+  height: 70px;
+  color: #fff;
+  margin: 0;
+  padding: 0 10px;
+  border-right: 2px solid rgba(222,222,222,.22);
+  text-align: center;
+  cursor: pointer;
+  transition: background .3s;
+
+
+  &>dt{
+    margin-top: 8px;
+  }
+  &>dd{
+    line-height: 34px;
+  }
+  &:hover{
+    background-color: $bg-blue-deep;
+  }
+}
+.nav-item.active,.nav-item:hover{
+  background-color: $bg-blue-deep;
+}
+.nav-in-tab {
+  overflow: hidden;
+  float: left;
+  height: 70px;
+}
+.nav-item .colseTag{
+  position: absolute;
+  top:-4px;
+  right: 6px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9;
+  display: none;
+}
+.nav-item:hover .colseTag{
+  display: block;
+}
+.nav-wallpaper{
+  height: 70px;
+  width: 99999px;
+  position: absolute;
+}

@@ -1,0 +1,28 @@
+<div id="nav">
+  <div class="logo">
+    <i class="shuitou-logo"></i>
+    <span>客服营销管理平台</span>
+  </div>
+  <div class="nav-in-fixed">
+    <dl class="nav-item" routerLink="./hometpl" (click)="workspacehidden()">
+      <dt><img src="../../../assets/imgs/nav/Workbench.png" alt=""></dt>
+      <dd>我的工作台</dd>
+    </dl>
+    <dl class="nav-item" routerLink="./diy" (click)="workspacehidden()">
+      <dt><img src="../../../assets/imgs/nav/Workbench.png" alt=""></dt>
+      <dd>diy工作台</dd>
+    </dl>
+    <dl class="nav-item" routerLink="./apps" (click)="workspacehidden()">
+      <dt><img src="../../../assets/imgs/nav/apps.png" alt=""></dt>
+      <dd>功能大全</dd>
+    </dl>
+  </div>
+  <app-nav-tab ></app-nav-tab>
+  <div class="nav-in-right">
+    <i class="fa fa-power-off"></i>
+    <i class="fa fa-gear"></i>
+    <i class="fa fa-envelope-o"  routerLink="./todolist" (click)="workspacehidden()" ><span class="badge bg-danger">10</span></i>
+    <span class="user-name">张三</span>
+    <i class="fa fa-user-circle-o"></i>
+  </div>
+</div>

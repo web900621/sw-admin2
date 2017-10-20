@@ -1,0 +1,92 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+    <form class="form">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="dumpedinvoicedNum">发票号</label>
+                    <input type="text" class="form-control" id="dumpedinvoicedNum" name="dumpedinvoicedNum"
+                           placeholder="发票号">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="dumpedinvoicedData">发票日期</label>
+                    <input type="email" class="form-control" id="dumpedinvoicedData" name="dumpedinvoicedData"
+                           placeholder="发票日期">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="dumpedinvoicedTollCollector">收费员</label>
+                    <input type="email" class="form-control" id="dumpedinvoicedTollCollector"
+                           name="dumpedinvoicedTollCollector" placeholder="收费员">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>打印日期</label>
+                    <p-calendar [(ngModel)]="invoiceDumpeddyrq" name="invoiceDumpedfpzfdyrq"
+                                [placeholder]="'选择打印日期'" [style]="{'width':'100%'}"></p-calendar>
+
+                </div>
+            </div>
+        </div>
+        <div class="my-btn-group">
+            <button pButton type="button" label="查询" class="ui-button-info" icon="fa-search"
+                    iconPos="left" (click)="cxInvoicedDumped()"></button>
+        </div>
+    </form>
+
+
+    <p-dataTable [value]="invoiceDumpedResult" [tableStyleClass]="'table-yj'" [style]="{'textAlign':'center'}">
+        <p-column field="fph" header="发票号"></p-column>
+        <p-column field="kpsl" header="开票水量"></p-column>
+        <p-column field="kprq" header="开票日期"></p-column>
+        <p-column field="kpje" header="开票金额"></p-column>
+        <p-column field="kpr" header="开票人"></p-column>
+        <p-column field="fpzt" header="发票状态"></p-column>
+        <p-column field="zfyy" header="作废原因"></p-column>
+        <p-column field="sfy" header="收费员"></p-column>
+        <p-column field="dyrq" header="打印日期"></p-column>
+        <p-column styleClass="col-button">
+            <ng-template pTemplate="header">
+                <p class="text-center">操作</p>
+            </ng-template>
+            <ng-template let-index="rowIndex" pTemplate="body">
+                <button type="button" pButton icon="fa fa-trash-o " iconPos="left"
+                        label="作废" class="ui-button-danger no-text-button text-color-danger"
+                        (click)="invoiceDumpedDispaly = true;"></button>
+
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+
+    <p-dialog header="作废发票" [(visible)]="invoiceDumpedDispaly" modal="modal" width="500" responsive="true"
+              [contentStyle]="{'overflow':'visible'}">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">选择作废原因</label>
+                <div class="col-sm-7">
+                    <p-dropdown [options]="invoiceDumpedyy" [(ngModel)]="selectedInvoiceDumpedyy"
+                                [placeholder]="'择发票作废原因'" name="invoiceDumpedfpzfyy"
+                                [style]="{'width':'160px'}"></p-dropdown>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">作废日期</label>
+                <div class="col-sm-7">
+                    <p-calendar [(ngModel)]="invoiceDumpedrq" name="invoiceDumpedfpzfrq"></p-calendar>
+                </div>
+            </div>
+        </form>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <button type="button" pButton icon="fa-close" class="button-qx"
+                        (click)="this.invoiceDumpedDispaly=false"
+                        label="取消"></button>
+                <button type="button" pButton icon="fa-check" (click)="confirm()"
+                        label="确认"></button>
+            </div>
+        </p-footer>
+    </p-dialog>
+</div>

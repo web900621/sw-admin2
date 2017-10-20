@@ -1,0 +1,18 @@
+<div class="datastatistice-container">
+    <div class="generalZwny">
+        <form class="form-inline" id="from-zwny">
+            <div class="form-group">
+                <label for="">账务年月:</label>
+                <p-dropdown class="text-center" [options]="generalZwnyY" [(ngModel)]="generalSelectedY"
+                            name="generalzwnyY"></p-dropdown>
+                <p-dropdown class="text-center" [options]="generalZwnyM" [(ngModel)]="generalSelectedM"
+                            name="generalzwnyM"></p-dropdown>
+            </div>
+            <button pButton type="button" label="查 询" (click)="cxData()"></button>
+        </form>
+    </div>
+    <div class="reports-container" #report>
+
+    </div>
+</div>
+

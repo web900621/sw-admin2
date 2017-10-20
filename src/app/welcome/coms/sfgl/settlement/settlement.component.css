@@ -1,0 +1,6 @@
+.isCheckoutLabel{
+    display: block;
+}
+.ui-dialog.ui-widget .ui-dialog-titlebar{
+    border-bottom: none;
+}

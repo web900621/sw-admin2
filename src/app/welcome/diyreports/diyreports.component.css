@@ -1,0 +1,35 @@
+
+.box {
+    font-size: 10px;
+    padding-left: .8em;
+    padding-right: .8em;
+    padding-top: 40px;
+}
+
+.addCard{
+    display: none;
+}
+.isshow{
+    display: block;
+}
+.addCardbox{
+    width: 100%;
+    height:100%;
+    text-align: center;
+    border: 1px dotted #ddd;
+    cursor: pointer;
+    transition: all .5s;
+}
+.addCardbox .fa-plus{
+    color: #ddd;
+    font-size: 100px;
+    font-weight: 100;
+    line-height: 325px;
+    transition: all .5s;
+}
+.addCardbox:hover{
+    border-color: #999;
+}
+.addCardbox:hover .fa-plus{
+    color: #999;
+}

@@ -1,0 +1,51 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+    <form class="form">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>客户编码</label>
+                    <input type="text" class="form-control" name="prepaidwatermeterfeeUserCode"
+                           placeholder="客户编码">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>客户名称</label>
+                    <input type="text" class="form-control" name="prepaidwatermeterfeeUserName"
+                           placeholder="客户名称">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>客户地址</label>
+                    <input type="text" class="form-control"
+                           name="prepaidwatermeterfeeUserAddr" placeholder="客户地址">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>手机号</label>
+                    <input type="text" class="form-control"
+                           name="prepaidwatermeterfeeUserPhone" placeholder="手机号">
+                </div>
+            </div>
+        </div>
+        <div class="my-btn-group">
+            <button pButton type="button" label="查询" class="ui-button-info" icon="fa-search"
+                    iconPos="left" (click)="cxPrepaidWaterMeterFee()"></button>
+        </div>
+    </form>
+    <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="YFFSB"
+                 selectionMode="single"
+                 [(selection)]="selectedYFFSB"
+                 (onRowSelect)="onYFFSBSelect()">
+        <p-column [style]="{'width':'38px'}" selectionMode="single"></p-column>
+        <p-column field="khbm" header="客户编码"></p-column>
+        <p-column field="khmc" header="客户名称"></p-column>
+        <p-column field="yyhbm" header="营业户编码"></p-column>
+        <p-column field="lcdbm" header="量测点编码"></p-column>
+        <p-column field="ysxz" header="用水性质"></p-column>
+    </p-dataTable>
+    <div #YFFSBDmroom></div>
+
+</div>

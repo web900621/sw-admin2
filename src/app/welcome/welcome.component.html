@@ -1,0 +1,16 @@
+<app-nav></app-nav>
+<div [ngClass]="{'componentHidden':toggleWorkSpaceService.workSpaceIsShow}">
+  <router-outlet></router-outlet>
+</div>
+<div [ngClass]="{'componentHidden':!toggleWorkSpaceService.workSpaceIsShow}" >
+  <router-outlet name="workspace"></router-outlet>
+</div>
+<!--通用提示信息-->
+<p-growl [value]="growlService.growlMsg" [life]="3000"></p-growl>
+<!--通用确认弹窗-->
+<p-confirmDialog width="425" #cd >
+  <p-footer>
+    <button type="button" pButton icon="fa-check" label="确认"  (click)="cd.accept()"></button>
+    <button type="button" pButton icon="fa-close" label="取消" class="button-qx" (click)="cd.reject()"></button>
+  </p-footer>
+</p-confirmDialog>

@@ -1,0 +1,42 @@
+<div class="wallpaper">
+    <div class="card"
+         [ngClass]="{
+            'card25':p.width==1,
+            'card50':p.width==2,
+            'card75':p.width==3,
+            'card100':p.width==4,
+            'height1':p.height==1}" *ngFor="let p of portlets;let index = index;">
+        <div class="box">
+            <div class="box-title" [ngSwitch]="titleCase">
+                <p *ngSwitchDefault>{{p.name}}</p>
+            </div>
+            <div class="box-body">
+                <jhi-blankreports *ngIf="p.portletType==0" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-blankreports>
+                <jhi-datastatistics *ngIf="p.portletType==4"></jhi-datastatistics>
+                <jhi-datastatistics2 *ngIf="p.portletType==41"></jhi-datastatistics2>
+                <jhi-datastatistics3 *ngIf="p.portletType==42"></jhi-datastatistics3>
+                <app-cygn *ngIf="p.portletType==3"></app-cygn>
+
+                <jhi-recovery *ngIf="p.portletType==5" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-recovery>
+                <jhi-copyrate *ngIf="p.portletType==6" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-copyrate>
+                <jhi-paymentmethod *ngIf="p.portletType==7" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-paymentmethod>
+                <jhi-waterquality *ngIf="p.portletType==8" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-waterquality>
+                <jhi-charge *ngIf="p.portletType==9" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-charge>
+                <jhi-chargemoney *ngIf="p.portletType==10" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-chargemoney>
+            </div>
+        </div>
+    </div>
+    <div class="card card25 height1 addCard" [ngClass]="{'isshow':display==true}" (click)="addReports()">
+        <div class="addCardbox">
+            <i class="fa fa-plus "></i>
+        </div>
+    </div>
+    <div class="card card100 height1 saveCard text-center" >
+        <button pButton type="button" label="保存" class="ui-button-warning"
+                icon="fa fa-save"
+                iconPos="left" (click)="saveChange()"></button>
+        <button pButton type="button" label="恢复默认" class="ui-button-danger"
+                icon="fa fa-refresh"
+                iconPos="left" (click)="initPortals()"></button>
+    </div>
+</div>

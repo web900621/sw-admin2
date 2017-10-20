@@ -1,0 +1,120 @@
+
+.dialog-wallpaper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.dialog-wallpaper .dialog-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    transition: all .3s;
+    transition-delay: .1s;
+    box-shadow: #666 0 0 10px;
+    background-color: #fff;
+}
+
+.closeDialog {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    font-size: 16px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.closeDialog > b {
+    font-weight: 400;
+    padding: 3px 5px;
+}
+
+.closeDialog:hover {
+    border-color: #c0c0c0;
+    background: #eeeeee;
+    color: #212121;
+}
+
+.dialog-content {
+    padding: 15px;
+}
+
+.data-details-box {
+    overflow: auto;
+    cursor: default;
+}
+
+.data-details-box p {
+    margin: 0;
+    padding: 3px 0;
+    color: #4E4F4F;
+}
+
+.data-details-title {
+    background-color: #F1F1F1;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+
+.data-details-title > p, .data-details-body > div {
+    margin: 0;
+    float: left;
+    text-align: center;
+}
+
+.data-details-body .dq {
+    color: #666;
+}
+
+.data-details-body p {
+    color: #666;
+    font-size: 13px;
+    padding: 4px 0;
+}
+
+.data-details-title > p:nth-child(1) {
+width: 23%;
+}
+
+.data-details-title > p:nth-child(2){
+width: 45%;
+}
+
+.data-details-title > p:nth-child(3){
+width: 32%;
+}
+.data-details-body > div.item {
+    overflow: auto;
+    width: 100%;
+}
+
+.data-details-body > div > p {
+    float: left;
+}
+
+.data-details-body > div > p:nth-child(1) {
+    width: 23%;
+}
+
+.data-details-body > div > p:nth-child(2) {
+    width: 45%;
+}
+
+.data-details-body > div > p:nth-child(3) {
+    width: 32%;
+}
+
+.my-btn-group {
+    display: block;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+

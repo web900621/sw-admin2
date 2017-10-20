@@ -1,0 +1,21 @@
+<div class="component-container cygn-container" [ngClass]="{'inmaster':parentComponent=='homemaster'}">
+  <span class="cygn-bj" (click)="toggleDialogShow()">编辑</span>
+  <div class="appItem" *ngFor="let app of userCygn ; let index = index;" >
+    <dl (click)="goApp(app)">
+      <dt><img [src]="app.imgSrc" alt=""></dt>
+      <dd>{{app.name}}</dd>
+    </dl>
+  </div>
+  <div style="clear: both"></div>
+</div>
+
+
+<div class="dialog-wallpaper" *ngIf="showDialog">
+  <div class="dialog-container" >
+        <span class="closeDialog" (click)="toggleDialogShow()" >&times;</span>
+    <div class="dialog-content">
+      <app-applications  (updateUserCygn)="doUpdateUserCygn($event)" [parentComponent]="'cygnComponent'" ></app-applications>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,81 @@
+.echart-details {
+  width: 385px;
+  height: 385px;
+  padding: 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: #fff;
+  box-shadow: #ccc 0 0 5px;
+}
+@media screen and(max-width: 1400px){
+  .echart-details{
+    width: 350px;
+    height: 360px;
+  }
+}
+
+.colseDetails {
+  position: absolute;
+  top: -8px;
+  right: 5px;
+  font-size: 32px;
+  color: #666;
+  cursor: pointer;
+  z-index: 99;
+}
+.moveicon{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: url("../../../../assets/imgs/moveicon.png") no-repeat center;
+  color: #666;
+  cursor: pointer;
+  z-index: 99;
+}
+.echart-details-box {
+  width: 100%;
+  height: 50%;
+}
+.data-details-box{
+  cursor: default;
+}
+.data-details-box p{
+  margin: 0;
+  padding: 3px 0;
+  color: #4E4F4F;
+}
+
+.data-details-title {
+  background-color: #F1F1F1;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+.data-details-title > p ,.data-details-body > div{
+  margin: 0;
+  float: left;
+  text-align: center;
+}
+.data-details-body .dq{
+  color: #666;
+  height: 150px;
+  line-height: 150px;
+}
+.data-details-body p{
+  color: #666;
+  font-size: 13px;
+  padding: 4px 0;
+}
+.data-details-title > p:nth-child(1) ,.data-details-body > div:nth-child(1) {
+  width: 23%;
+}
+.data-details-title > p:nth-child(2) ,.data-details-body > div:nth-child(2) {
+  width: 45%;
+  text-align: left;
+}
+.data-details-title > p:nth-child(3) ,.data-details-body > div:nth-child(3) {
+  width: 32%;
+}

@@ -1,0 +1,195 @@
+
+.box {
+  font-size: 10px;
+  padding-top: 1em;
+  padding-left: .8em;
+  padding-right: .8em;
+}
+
+.group-name {
+  font-size: 1.6em;
+  border-left: 3px solid red;
+  padding-left: .5em;
+  margin-bottom: 1.8em;
+}
+
+.group-body {
+  padding: 0 .5em;
+}
+
+.app {
+  width: 16.66%;
+  float: left;
+  margin-bottom: 3em;
+}
+
+.app > div {
+  position: relative;
+  overflow: auto;
+  float: left;
+  padding: 1px;
+}
+
+.app > div > .target {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: #FF2700 url("../../../assets/imgs/target.png") no-repeat center;
+  background-size: contain;
+  display: none;
+}
+
+.app > div > dt {
+  float: left;
+  min-width: 46px;
+}
+
+.app > div > dt > img {
+  cursor: pointer;
+}
+
+.app > div > dd {
+  cursor: pointer;
+  float: left;
+  font-size: 1.4em;
+  margin-left: .8em;
+  line-height: 46px;
+}
+
+.dialog-title {
+  display: none;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 10px;
+  >p{
+    margin-bottom: 0;
+  }
+}
+
+.dialog-title .pxgz {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.dialog-title .yx {
+  overflow: auto;
+  font-size: 14px;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 65px;
+}
+
+.dialog-title .yx span {
+  float: left;
+  padding: 4px 8px;
+  background-color: #E1DFDA;
+  border-radius: 6px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+
+.dialog-title .yx span:nth-child(1) {
+  background-color: transparent;
+  text-align: right;
+  width: 64px;
+}
+
+.dialog-title > p {
+  color: #2C9AEC;
+  font-size: 1.6em;
+}
+
+.dialog-footer {
+  display: none;
+  position: relative;
+  bottom: -5px;
+  z-index: 5;
+}
+
+.dialog-footer > a {
+  background-color: #0098EE;
+  border-radius: 0;
+  border: none;
+  color: #fff;
+  padding: 6px 20px;
+}
+
+.dialog-footer > a:hover {
+  background-color: #0184BD;
+  border: none;
+}
+
+/*apps组件在 modal中的样式*/
+.inmodal{
+  padding: 7.5px;
+}
+.inmodal .dialog-title {
+  display: block;
+}
+
+.inmodal .group-name {
+  font-size: 1.4em;
+  margin-bottom: 0;
+}
+
+.inmodal .box {
+  padding: 0;
+}
+
+.inmodal dl.app {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 10px 5px;
+  width: 106px;
+  height: 106px;
+}
+
+.inmodal .app > div > dt {
+  padding-top: 8px;
+  width: 100%;
+}
+
+.inmodal .app > div > dd {
+  font-size: 12px;
+  margin: 0;
+  width: 100%;
+  line-height: 12px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.inmodal .app > div {
+  float: none;
+}
+
+.inmodal .app > div.active {
+  border: 1px dashed #2C9AEC;
+  padding: 0;
+}
+
+.inmodal .app > div.active .target {
+  display: block;
+}
+
+.inmodal .my-container {
+  height: 475px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 7;
+  transition: height .3s;
+  opacity: 1;
+  z-index: 999;
+}
+.inmodal .my-container.hid {
+  opacity: 0;
+  z-index: -1;
+}
+
+
+.inmodal .dialog-footer {
+  display: block;
+}
+

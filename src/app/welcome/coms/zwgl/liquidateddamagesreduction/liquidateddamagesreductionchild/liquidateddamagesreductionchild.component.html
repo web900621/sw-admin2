@@ -1,0 +1,71 @@
+<div class="dialog-wallpaper">
+    <div class="dialog-container">
+        <span class="closeDialog " (click)="closeme('close')">
+            <b class="fa fa-w fa-close"></b>
+        </span>
+        <div class="dialog-content">
+            <div class="content-title">
+                <p>违约金减免</p>
+            </div>
+            <form class="form-horizontal">
+                <div class="ui-g ui-g-nopad">
+                    <div class="ui-g-12 ui-g-nopad">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">当前违约金</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="LiquidatedDamages"
+                                       disabled [(ngModel)]="LiquidatedDamagesValue">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-g-nopad">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">减免金额</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="LiquidatedDamagesReduction"
+                                       [(ngModel)]="LiquidatedDamagesReductionValue"
+                                       (change)="ReductionValueChange()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-g-nopad">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">减免理由</label>
+                            <div class="col-sm-8">
+                                <p-dropdown name="liquidateddamagesAccountingYear" placeholder="选择减免理由"
+                                            [options]="ReductionReason"
+                                            [style]="{'width':'100%'}"
+                                            [(ngModel)]="selectedReductionReason"
+                                            (onChange)="ReductionReasonChange()"></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g" *ngIf="selectedReductionReason =='004'">
+                    <div class="ui-g-12 ui-g-nopad">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">其他:</label>
+                            <div class="col-sm-8">
+                                <textarea pInputTextarea [(ngModel)]="ReductionReasonOther" name="reductionReasonOther"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="ui-g">
+                <div class="ui-g-4"></div>
+                <div class="ui-g-8">
+                    <div class="my-btn-group">
+                        <button pButton type="button" label="减免" class="ui-button-danger" icon="fa-cny"
+                                iconPos="left" (click)="ReductionEnd()" #btnJM></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

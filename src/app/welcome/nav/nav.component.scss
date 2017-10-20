@@ -1,0 +1,91 @@
+@import "../../../assets/color-style";
+
+#nav {
+  height: 70px;
+  width: 100%;
+  background-color: $bg-blue-main;
+}
+
+.logo {
+  border-right: 2px solid rgba(222, 222, 222, .22);
+  width: 220px;
+  height: 70px;
+  float: left;
+  & > .shuitou-logo {
+    float: left;
+    margin-top: 13px;
+    width: 40px;
+    height: 40px;
+    background: url("../../../assets/imgs/shuitou_logo.png") no-repeat center;
+  }
+  & > span {
+    line-height: 70px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.nav-item {
+  box-sizing: border-box;
+  float: left;
+  min-width: 80px;
+  height: 70px;
+  color: #fff;
+  margin: 0;
+  padding: 0 10px;
+  border-right: 2px solid rgba(222, 222, 222, .22);
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s;
+  & > dt {
+    margin-top: 8px;
+  }
+  & > dd {
+    line-height: 34px;
+  }
+  &:hover {
+    background-color: $bg-blue-deep;
+  }
+}
+
+.nav-in-fixed {
+  overflow: hidden;
+  float: left;
+  height: 70px;
+}
+
+.nav-in-right {
+  float: right;
+  height: 70px;
+  color: #fff;
+  padding-right: 15px;
+
+  & > i {
+    float: right;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  & > span {
+    float: right;
+    font-size: 16px;
+    margin-left: -6px;
+    margin-right: 10px;
+    margin-top: 13px;
+  }
+}
+
+.nav-in-right .fa.fa-envelope-o {
+  position: relative;
+  margin-right: 20px;
+}
+
+.nav-in-right .fa.fa-envelope-o .badge {
+  background-color: #FF2300;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 3px;
+}

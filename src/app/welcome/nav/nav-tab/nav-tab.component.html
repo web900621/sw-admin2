@@ -1,0 +1,12 @@
+<div class="nav-in-tab">
+  <div class="nav-wallpaper clearfix">
+    <dl class="nav-item clearfix"
+        *ngFor="let app of navtabService.tags;let index = index;"
+        (click)="showWorkSpace();navtabService.selectTag(app)"
+        [ngClass]="{'active':app&&(navtabService.selectId==app.id)}">
+      <dt><img [src]="app.imgNavSrc" alt=""></dt>
+      <dd>{{app.name}}</dd>
+      <span class="colseTag" (click)="navtabService.delTag(index);destroyComInWorkspace(app.id)">&times;</span>
+    </dl>
+  </div>
+</div>

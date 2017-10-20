@@ -1,0 +1,116 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+    <form class="form-horizontal">
+        <div class="ui-g">
+            <div class="ui-g-6 ui-g-nopad">
+                <div class="form-group">
+                    <label class="text-left-imp col-sm-2 control-label">册本号</label>
+                    <div class="col-sm-8">
+                        <p-dropdown name="bookNum" placeholder="选择册本号" [options]="bookNums"
+                                    [style]="{'width':'130px'}" [(ngModel)]="selectedBookNum"></p-dropdown>
+                        <button style="margin-left: 20px;position: relative;top:1px;" pButton type="button" label="查询"
+                                class="ui-button-info" icon="fa-search"
+                                iconPos="left"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal">
+        <div class="ui-g">
+            <div class="ui-g-6 ui-g-nopad">
+                <div class="form-group">
+                    <label class="text-left-imp col-sm-2 control-label">抄表员</label>
+                    <div class="col-sm-8">
+                        <p-dropdown name="meterReading" placeholder="选择抄表员" [options]="meterReaders"
+                                    [style]="{'width':'130px'}" [(ngModel)]="selectedmeterReader"></p-dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-6 ui-g-nopad">
+                <div class="form-group">
+                    <label class="text-left-imp col-sm-2 control-label">抄表时间</label>
+                    <div class="col-sm-8">
+                        <p-dropdown name="meterReading" placeholder="选择抄表时间" [options]="meterTime"
+                                    [style]="{'width':'130px'}" [(ngModel)]="selectedMeterTime"></p-dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <p-tabView [styleClass]="'tabView-yj'">
+        <p-tabPanel header="未抄" >
+            <p-dataTable exportFilename="wcbook" #wcBook [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="wc" [editable]="true">
+                <p-header class="text-left">
+                    <ul class="list-inline">
+                        <li>应抄表数:{{totlecbs}}</li>
+                        <li>已抄表数:{{ycbs}}</li>
+                        <li>未抄表数:{{totlecbs-ycbs}}</li>
+                    </ul>
+                </p-header>
+                <p-column field="cnxh" header="册内序号"></p-column>
+                <p-column field="yyhbm" header="营业户编码"></p-column>
+                <p-column field="yyhmc" header="营业户名称" [style]="{'width':'250px'}" ></p-column>
+                <p-column field="lcdbm" header="量测点编码"></p-column>
+                <p-column field="sccm" header="上次抄码" [editable]="true"></p-column>
+                <p-column field="bccm" header="本次抄码" [editable]="true"></p-column>
+                <p-column field="cjsl" header="抄见水量">
+                    <ng-template let-col let-CbData="rowData" pTemplate="body">
+                        <span>{{CbData.bccm-CbData.sccm}}</span>
+                    </ng-template>
+                </p-column>
+                <p-column field="cbbz" header="抄表备注"></p-column>
+                <p-footer>
+                    <button (click)="confirm()" pButton type="button" label="保存" class="ui-button-warning"
+                            icon="fa fa-save"
+                            iconPos="left"></button>
+                    <button (click)="wcBook.exportCSV()" pButton type="button" label="另存为CSV" class="ui-button-info"
+                            icon="fa file-o"
+                            iconPos="left"></button>
+                </p-footer>
+            </p-dataTable>
+        </p-tabPanel>
+        <p-tabPanel header="已抄未开账">
+            <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="ycwkz"
+                         [editable]="true">
+                <p-header class="text-left">
+                    <ul class="list-inline">
+                        <li>应抄表数:{{totlecbs}}</li>
+                        <li>已抄表数:{{ycbs}}</li>
+                        <li>未抄表数:{{totlecbs-ycbs}}</li>
+                    </ul>
+                </p-header>
+                <p-column field="cnxh" header="册内序号"></p-column>
+                <p-column field="yyhbm" header="营业户编码"></p-column>
+                <p-column field="yyhmc" header="营业户名称" [style]="{'width':'250px'}"></p-column>
+                <p-column field="lcdbm" header="量测点编码"></p-column>
+                <p-column field="sccm" header="上次抄码" [editable]="true"></p-column>
+                <p-column field="bccm" header="本次抄码" [editable]="true"></p-column>
+                <p-column field="cjsl" header="抄见水量">
+                    <ng-template let-col let-CbData="rowData" pTemplate="body">
+                        <span>{{CbData.bccm-CbData.sccm}}</span>
+                    </ng-template>
+                </p-column>
+                <p-column field="cbbz" header="抄表备注"></p-column>
+            </p-dataTable>
+        </p-tabPanel>
+        <p-tabPanel header="已开账">
+            <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="ykz"
+                         [editable]="true">
+                <p-column field="cnxh" header="册内序号"></p-column>
+                <p-column field="yyhbm" header="营业户编码"></p-column>
+                <p-column field="yyhmc" header="营业户名称" [style]="{'width':'250px'}"></p-column>
+                <p-column field="lcdbm" header="量测点编码"></p-column>
+                <p-column field="sccm" header="上次抄码" [editable]="true"></p-column>
+                <p-column field="bccm" header="本次抄码" [editable]="true"></p-column>
+                <p-column field="cjsl" header="抄见水量">
+                    <ng-template let-col let-CbData="rowData" pTemplate="body">
+                        <span>{{CbData.bccm-CbData.sccm}}</span>
+                    </ng-template>
+                </p-column>
+                <p-column field="cbbz" header="抄表备注"></p-column>
+            </p-dataTable>
+        </p-tabPanel>
+    </p-tabView>
+</div>

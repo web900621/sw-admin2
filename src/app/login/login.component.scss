@@ -1,0 +1,73 @@
+
+.login-wallpaper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: url("../../assets/imgs/login_bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.login-container {
+  width: 1200px;
+  height: 440px;
+  background: url("../../assets/imgs/login_1.jpg") no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -220px;
+  margin-left: -600px;
+}
+
+.login-form-container {
+  height: 520px;
+  width: 440px;
+  background-color: #fff;
+  position: absolute;
+  top: -40px;
+  left: 56%;
+  padding: 50px;
+  .sys-title {
+    font-size: 26px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    span {
+      font-size: 20px;
+      padding-left: 6px;
+    }
+  }
+  input.form-control {
+    line-height: 50px;
+    height: 50px;
+    border-color: #13A1E4;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 25px;
+  }
+}
+
+.btn-warning {
+  font-size: 18px;
+  background-color: #FE8943;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 6px;
+}
+
+.btn-warning:focus {
+  background-color: #eb9316;
+}
+
+.login-footer {
+  margin-top: 50px;
+}
+
+input::-webkit-input-placeholder {
+  /* placeholder颜色  */
+  color: #13A1E4;
+  /* placeholder字体大小  */
+  /* placeholder位置  */
+}
+

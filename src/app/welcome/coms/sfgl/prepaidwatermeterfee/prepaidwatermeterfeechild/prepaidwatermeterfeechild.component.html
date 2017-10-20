@@ -1,0 +1,58 @@
+<div class="dialog-wallpaper">
+    <div class="dialog-container">
+        <span class="closeDialog " (click)="closeme('close')">
+            <b class="fa fa-w fa-close"></b>
+        </span>
+        <div class="dialog-content">
+            <div class="content-title">
+                <p>收款</p>
+            </div>
+            <form class="form-horizontal">
+                <div class="ui-g ui-g-nopad">
+                    <div class="ui-g-12 ui-g-nopad">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">实收金额</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="PaidAmount"
+                                        [(ngModel)]="prepaidwatermeterfeeSSJE" (change)="PaidAmountChange()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-g-nopad">
+                        <div class="form-group">
+                            <label class="text-left-imp col-sm-4 control-label">预售水量</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="PreSaleWater"
+                                       [(ngModel)]="prepaidwatermeterfeeYSSL" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="ui-g">
+                <div class="ui-g-4"></div>
+                <div class="ui-g-8">
+                    <p-checkbox name="PreSaleWaterGrounp" value="ChangeTheDeposit" label="找零转预存款"
+                                [(ngModel)]="selectedOptions" inputId="ChangeTheDeposit"></p-checkbox>
+                </div>
+                <div class="ui-g-4"></div>
+                <div class="ui-g-8">
+                    <p-checkbox name="PreSaleWaterGrounp" value="AutoPrint" label="自动打印发票" [(ngModel)]="selectedOptions"
+                                inputId="AutoPrint"></p-checkbox>
+                </div>
+            </div>
+            <div class="ui-g">
+                <div class="ui-g-4"></div>
+                <div class="ui-g-8">
+                    <div class="my-btn-group">
+                        <button  pButton type="button" label="结账" class="ui-button-danger" icon="fa-cny"
+                                 iconPos="left" (click)="UserPayEnd()" #btnJZ></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+{
+    "name": "收费人员首页模型",
+    "type": "2",
+    "portlets": [
+        {
+            "name": "数据统计",
+            "width": 3,
+            "height": 1,
+            "url": "",
+            "portletType": "41"
+        },
+        {
+            "name": "常用功能",
+            "width": 1,
+            "height": 1,
+            "portletType": "3"
+        },
+        {
+            "name": "收费统计",
+            "width": 4,
+            "height": 1,
+            "url": "",
+            "portletType": "9"
+        },
+        {
+            "name": "收费项目金额统计",
+            "width": 2,
+            "height": 1,
+            "url": "",
+            "portletType": "10"
+        },
+        {
+            "name": "缴费方式统计",
+            "width": 2,
+            "height": 1,
+            "url": "",
+            "portletType": "7"
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+  <form class="form">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="khbm">客户编码</label>
+          <input type="text" class="form-control" id="khbm" name="khbm" placeholder="客户编码">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="khmc">客户名称</label>
+          <input type="email" class="form-control" id="khmc" name="khmc" placeholder="客户名称">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="yyhbm">营业户编码</label>
+          <input type="email" class="form-control" id="yyhbm" name="yyhbm" placeholder="营业户编码">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="yyhmc">营业户名称</label>
+          <input type="email" class="form-control" id="yyhmc" name="yyhmc" placeholder="营业户名称">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="sqrxm">申请人姓名</label>
+          <input type="email" class="form-control" id="sqrxm" name="sqrxm" placeholder="申请人姓名">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="sfzh">身份证号</label>
+          <input type="email" class="form-control" id="sfzh" name="sfzh" placeholder="身份证号">
+        </div>
+      </div>
+    </div>
+    <div class="my-btn-group">
+      <button pButton type="button" label="查询" class="ui-button-info" icon="fa-search"
+              iconPos="left"></button>
+      <button (click)="addJtrksqChildComponent()" pButton type="button" label="新增" class="ui-button-success"
+              icon="fa-plus-circle"
+              iconPos="left"></button>
+    </div>
+  </form>
+
+  <p-dataTable [value]="result" [lazy]="true" [rows]="10" [paginator]="true" [style]="{'textAlign':'center'}"
+               [totalRecords]="TotalRecords" (onLazyLoad)="loadJtrkcxLazy($event)" [tableStyleClass]="'table-yj'">
+    <p-column field="yyhbm" header="营业户编码"></p-column>
+    <p-column field="yyhmc" header="营业户名称" [style]="{'width':'250px'}"></p-column>
+    <p-column field="khbm" header="客户编码"></p-column>
+    <p-column field="khmc" header="客户名称"></p-column>
+    <p-column field="jtrks" header="阶梯人口数"></p-column>
+    <p-column field="sqzt" header="申请状态"></p-column>
+    <p-column field="sqrq" header="申请日期"></p-column>
+    <p-column styleClass="col-button">
+      <ng-template pTemplate="header">
+        <p class="text-center">操作</p>
+      </ng-template>
+      <ng-template let-index="rowIndex" pTemplate="body" let-rowData="rowData">
+        <button type="button" pButton icon="fa-eye" iconPos="left"
+                class="ui-button-icon no-text-button text-color-secondary"
+                (click)="addJtrksqChildComponent(rowData,true)"></button>
+        <button type="button" pButton icon="fa fa-edit " iconPos="left"
+                class="ui-button-warning no-text-button text-color-warning"
+                (click)="addJtrksqChildComponent(rowData,false)"></button>
+      </ng-template>
+    </p-column>
+  </p-dataTable>
+
+  <div #jtrkglDmroom></div>
+</div>

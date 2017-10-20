@@ -1,0 +1,790 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~primeng/resources/themes/omega/theme.css";
+@import "~primeng/resources/primeng.min.css";
+
+body {
+  font-family: '微软雅黑', Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #F1F2F7;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 0;
+}
+
+.componentHidden {
+  display: none;
+}
+
+/* ==============================================================
+Bootstrap tweaks
+===============================================================*/
+
+body, h1, h2, h3, h4 {
+  font-weight: 300;
+}
+
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+Generic styles
+========================================================================== */
+
+/* Error highlight on input fields */
+.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid green;
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid red;
+}
+
+/* other generic styles */
+
+.jh-card {
+  padding: 1.5%;
+  margin-top: 20px;
+  border: none;
+}
+
+.error {
+  color: white;
+  background-color: red;
+}
+
+.pad {
+  padding: 10px;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+.break {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.readonly {
+  background-color: #eee;
+  opacity: 1;
+}
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+/* ==========================================================================
+make sure browsers use the pointer cursor for anchors, even with no href
+========================================================================== */
+a:hover {
+  cursor: pointer;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+Custom alerts for notification
+========================================================================== */
+.alerts .alert {
+  text-overflow: ellipsis;
+}
+
+.alert pre {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.alert .popover pre {
+  font-size: 10px;
+}
+
+.alerts .toast {
+  position: fixed;
+  width: 100%;
+}
+
+.alerts .toast.left {
+  left: 5px;
+}
+
+.alerts .toast.right {
+  right: 5px;
+}
+
+.alerts .toast.top {
+  top: 55px;
+}
+
+.alerts .toast.bottom {
+  bottom: 55px;
+}
+
+@media screen and (min-width: 480px) {
+  .alerts .toast {
+    width: 50%;
+  }
+}
+
+/* ==========================================================================
+entity tables helpers
+========================================================================== */
+/* Remove Bootstrap padding from the element
+   http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+/* bootstrap 3 input-group 100% width
+   http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
+.width-min {
+  width: 1% !important;
+}
+
+/* Makes toolbar not wrap on smaller screens
+ http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
+.flex-btn-group-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+/* ==========================================================================
+entity detail page css
+========================================================================== */
+.row.jh-entity-details > dd {
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .row.jh-entity-details > dt {
+    margin-bottom: 15px;
+  }
+
+  .row.jh-entity-details > dd {
+    border-bottom: 1px solid #eee;
+    padding-left: 180px;
+    margin-left: 0;
+  }
+}
+
+/* ==========================================================================
+ui bootstrap tweaks
+========================================================================== */
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+.datetime-picker-dropdown > li.date-picker-menu div > table .btn-default,
+.uib-datepicker-popup > li > div.uib-datepicker > table .btn-default {
+  border: 0;
+}
+
+.datetime-picker-dropdown > li.date-picker-menu div > table:focus,
+.uib-datepicker-popup > li > div.uib-datepicker > table:focus {
+  outline: none;
+}
+
+/* jhipster-needle-css-add-main JHipster will add new css style */
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.hide {
+  display: none !important;
+}
+
+.positionr {
+  position: relative;
+}
+
+.gui-card {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /*padding: 7.5px;*/
+}
+
+.gui-portal {
+  background: #F6F5F8;
+  margin: -1em;
+  overflow-y: auto;
+}
+
+.gui-mt20 {
+  margin-top: 20px;
+}
+
+.blui-autosize {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.blui-tabview .ui-tabview-panels {
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.blui-tabview .ui-tabview-panel {
+  padding: 0;
+}
+
+.blui-tabview.ui-tabview {
+  padding: 0;
+}
+
+//@import url('bootstrap-custom.css');
+//@import url('apptheme.css');
+.blui-autosize {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.blui-toolbar .ui-button.ui-button-secondary:enabled:hover, .ui-button.ui-button-secondary:focus {
+  background-color: #f2f2f2;
+  border-color: #cccccc;
+  color: #373a3c;
+}
+
+.blui-toolbar .ui-button.ui-button-secondary:enabled:active {
+  background-color: #e6e6e6;
+}
+
+.blui-tabview .ui-tabview-panels {
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.blui-tabview .ui-corner-all {
+  border-radius: 3px 3px 0 0;
+}
+
+.blui-tabview .ui-tabview-panel {
+  padding: 0;
+}
+
+.blui-txtwarm {
+  color: red;
+}
+
+/*
+portal  */
+.wrap-layout {
+  height: 100%;
+}
+
+.gui-sidebar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 270px;
+  height: 100%;
+  background: #2e3c54;
+  z-index: 999;
+}
+
+.gui-sidebar.expand {
+  width: 540px;
+  /*background: rgba(37, 51, 74, 0.9);*/
+}
+
+.gui-rightside {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: #F0F1F7;
+  margin-left: 270px;
+}
+
+.gui-fullscreen {
+  margin-left: 0;
+}
+
+.toolbar-grid {
+  border: 1px solid #d9d9d9;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+.ui-dialog-footer .ui-widget-content {
+  border: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* 滚动条的滑轨背景颜色 */
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(230, 230, 230, 0.2);
+}
+
+/* 滑块颜色 */
+
+::-webkit-scrollbar-button {
+  background-color: transparent;
+}
+
+/* 滑轨两头的监听按钮颜色 */
+
+::-webkit-scrollbar-corner {
+  background-color: rgba(230, 230, 230, 1);
+}
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+
+/********首页组件的公共样式*****************/
+.outlethidden {
+  display: none;
+}
+
+.componentHidden {
+  display: none;
+}
+
+.wallpaper {
+  font-family: "Microsoft YaHei ";
+  color: #666;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 7.5px;
+  padding-top: 77.5px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.card {
+  padding: 7.5px;
+  background-color: transparent;
+  float: left;
+  box-sizing: border-box;
+}
+
+/*@media screen and (max-width: 1400px) {*/
+/*.wallpaper {*/
+/*padding: 5px*/
+/*}*/
+
+/*.card {*/
+/*padding: 5px*/
+/*}*/
+/*}*/
+
+.card100 {
+  width: 100%;
+}
+
+.card50 {
+  width: 50%;
+}
+
+.card75 {
+  width: 75%;
+}
+
+.card25 {
+  width: 25%;
+}
+
+.height1 {
+  height: 315px;
+}
+
+#nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+
+
+.box {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+  padding: 15px;
+}
+
+.box-title {
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 1em;
+  padding-bottom: 0;
+}
+
+.bj-container {
+  position: absolute;
+  box-sizing: border-box;
+  min-height: 48px;
+  margin: 0;
+  padding: 1em;
+  padding-bottom: 0;
+  width: 100%;
+  margin-top: -38px;
+  background-color: #fff;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 1400px) {
+  .box-title {
+    padding: .5em .5em;
+  }
+  .bj-container {
+    padding: .5em;
+    min-height: 42px;
+  }
+}
+
+.bj-container .ui-dropdown-label.ui-inputtext {
+  padding-left: 4px;
+}
+
+.bj-container .btn-confirm {
+  float: right;
+}
+
+.bj-container .btn-confirm span {
+  padding: .25em .5em;
+}
+
+.box-title > p {
+  margin: 0;
+  font-size: 1.8em;
+  color: #2198ee;
+  padding-left: .5em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #ddd;
+}
+
+.box-body {
+  width: 100%;
+  height: 100%;
+}
+
+.component-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.my-btn-group {
+  margin-bottom: 15px;
+}
+
+.text-left-imp {
+  text-align: left !important;
+}
+
+/*自定义表单样式*/
+.form-control {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #2C9AEC;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/*自定义按钮样式*/
+.ui-button {
+  border-radius: 0;
+}
+
+.no-text-button {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.text-color-secondary {
+  color: #2399e5 !important;
+}
+
+.text-color-secondary:hover, .text-color-secondary:focus {
+  color: #1f89ce !important;
+}
+
+.text-color-secondary:active {
+  color: #156090 !important;
+}
+
+.text-color-warning {
+  color: #f0ad4e !important;
+}
+
+.text-color-warning:hover, .text-color-warning:focus {
+  color: #ec971f !important;
+}
+
+.text-color-warning:active {
+  color: #ec971f !important;
+}
+
+.text-color-danger {
+  color: #d9534f !important;
+}
+
+.text-color-danger:hover, .text-color-danger:focus {
+  color: #d43f3a !important;
+}
+
+.text-color-danger:active {
+  color: #c9302c !important;
+}
+
+/*通用确认弹框消息的按钮样式*/
+.button-qx {
+  background-color: #ccc !important;
+  border-color: #ccc !important;
+}
+
+.button-qx:hover,
+.button-qx:active {
+  background-color: #999 !important;
+  border-color: #999 !important;
+}
+
+/*全局对话框分割线颜色*/
+.ui-dialog.ui-widget .ui-dialog-titlebar {
+  border-color: #eee !important;
+}
+
+.ui-widget-content {
+  border-color: #eee !important;
+  border-left: 0;
+  border-right: 0;
+}
+
+/*自定义表格样式*/
+.table-yj .ui-state-default {
+  border-color: transparent;
+}
+
+.table-yj .ui-widget-content {
+  border-color: transparent;
+}
+
+.ui-datatable .ui-datatable-caption, .ui-datatable .ui-datatable-header {
+  border-color: transparent;
+}
+
+.ui-datatable tbody > tr.ui-widget-content:hover {
+  background-color: #ebedf0;
+}
+
+.ui-datatable .table-yj .ui-datatable-thead > tr > th,
+.ui-datatable .table-yj .ui-datatable-tfoot > tr > td,
+.ui-datatable .table-yj .ui-datatable-data > tr > td {
+  border-color: transparent;
+}
+
+.table-yj tbody > tr.ui-widget-content.ui-state-highlight {
+  background-color: #2C9AEC;
+  color: #fff;
+}
+
+.table-yj .ui-chkbox-box.ui-state-active {
+  background: transparent;
+  color: #333;
+}
+
+.ui-datatable-footer {
+  border-color: transparent;
+}
+
+.ui-datatable .ui-datatable-data > tr > td {
+  padding: .5em .5em;
+}
+
+/*ui表单title统一样式*/
+.content-title {
+  border-bottom: 1px solid #eee;
+  margin: 10px 0 20px;
+  padding: 0;
+  font-weight: 900;
+}
+
+.content-title:after {
+  display: block;
+  content: ' ';
+  height: 0;
+  clear: both;
+}
+
+.content-title > P {
+  padding: 3px;
+  margin: 0;
+  float: left;
+  position: relative;
+  top: 2px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 3px solid #0098EE;
+}
+
+/*表单 输入框样式补全*/
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  color: #999;
+}
+
+.form-control {
+  height: 30px;
+  padding: 4px 12px;
+}
+
+.ui-inputtext {
+  padding: 4px 12px;
+  border-radius: 0;
+  width: 100%;
+  color: #555;
+}
+
+/*自定义标签样式*/
+.tabView-yj > ul {
+  border-color: transparent;
+}
+
+.tabView-yj .ui-corner-top {
+  border-radius: 0;
+}
+
+.tabView-yj .ui-tabview-panel {
+  padding-left: 0;
+}
+
+.tabView-yj .ui-tabview-nav {
+  padding-left: 0;
+}
+
+/*自定义组件Orderlist样式*/
+.cntz-orderlist .bookData-body {
+  overflow: auto;
+}
+
+.cntz-orderlist .bookData-body > p {
+  float: left;
+  margin: 0;
+  padding: .5em;
+}
+
+.cntz-orderlist .bookData-body > p:nth-child(1) {
+  width: 10%;
+}
+
+.cntz-orderlist .bookData-body > p:nth-child(2) {
+  width: 20%;
+}
+
+.cntz-orderlist .bookData-body > p:nth-child(3) {
+  width: 20%;
+}
+
+.cntz-orderlist .bookData-body > p:nth-child(4) {
+  width: 20%;
+}
+
+.cntz-orderlist .bookData-body > p:nth-child(5) {
+  width: 30%;
+}
+
+.cntz-orderlist {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.cntz-orderlist > .ui-orderlist-controls {
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: block;
+  height: auto;
+}
+
+.cntz-orderlist .ui-orderlist-list-container {
+  margin-right: 45px;
+}
+
+//自定义开关样式
+.my-switch {
+  position: relative;
+  top: 10px;
+  height: 30px;
+  border-radius: 20px;
+  .ui-inputswitch-off {
+    padding: 5px 0;
+  }
+  .ui-inputswitch-on {
+    padding: 5px 0;
+  }
+}

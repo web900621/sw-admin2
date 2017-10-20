@@ -1,0 +1,186 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+  <form class="form-horizontal">
+    <div class="ui-g ui-g-nopad">
+      <div class="ui-g-6 ui-g-nopad">
+        <div class="form-group">
+          <label for="priceAdjustmentNum" class="text-left-imp col-sm-2 control-label">调价号</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="priceAdjustmentNum" name="priceAdjustmentNum"
+                   disabled [(ngModel)]="waterPriceAdjustmentNum">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6 ui-g-nopad">
+        <div class="form-group">
+          <label class="text-left-imp col-sm-2 control-label">生效时间</label>
+          <div class="col-sm-8">
+            <p-calendar [minDate]="minDate" name="waterPriceadJustmentBeginData"
+                        [(ngModel)]="waterPriceadJustmentData" [placeholder]="'选择生效时间'"></p-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6 ui-g-nopad">
+        <div class="form-group">
+          <label class=" text-left-imp col-sm-2 control-label">用水性质</label>
+          <div class="col-sm-8">
+            <p-dropdown name="WaterQualitySelected" placeholder="选择用水性质" [options]="waterQualities"
+                        [style]="{'width':'130px'}" [(ngModel)]="selectedWaterQuality"
+                        (onChange)="WaterQualityChange()"></p-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div *ngIf="showRateItem">
+    <div class="content-title">
+      <p>费率项目</p>
+    </div>
+    <div class="my-btn-group">
+      <button pButton type="button" label="新增" class="ui-button-success" icon="fa-plus-circle"
+              iconPos="left" (click)="xzRateItemDisplay = true;"></button>
+      <button (click)="confirm()" pButton type="button" label="删除" class="ui-button-danger"
+              icon="fa fa-trash-o"
+              iconPos="left"></button>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-8">
+        <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="rateItems"
+                     selectionMode="multiple"
+                     [(selection)]="selectedRateItem">
+          <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+          <p-column field="item" header="费用项目"></p-column>
+          <p-column field="method" header="计费名称"></p-column>
+          <p-column field="price" header="单价(元/吨)"></p-column>
+        </p-dataTable>
+      </div>
+    </div>
+
+    <div class="content-title">
+      <p>阶梯水价</p>
+    </div>
+    <div class="my-btn-group">
+      <button pButton type="button" label="新增" class="ui-button-success" icon="fa-plus-circle"
+              iconPos="left" (click)="xzLadderPriceDisplay = true;"></button>
+      <button (click)="confirm2()" pButton type="button" label="删除" class="ui-button-danger"
+              icon="fa fa-trash-o"
+              iconPos="left"></button>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-10">
+        <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="ladderPrice"
+                     selectionMode="multiple"
+                     [(selection)]="selectedLadderPrice">
+          <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+          <p-column field="jtjb" header="阶梯级别"></p-column>
+          <p-column field="rs" header="人数"></p-column>
+          <p-column field="qsl" header="起始量(吨)"></p-column>
+          <p-column field="zzl" header="终止量(吨)"></p-column>
+          <p-column field="dj" header="单价(元/吨)"></p-column>
+          <p-column field="mrzl" header="每人增量(吨)"></p-column>
+          <p-column field="zdzl" header="最大增量(吨)"></p-column>
+        </p-dataTable>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-dialog header="新增费率项目" [(visible)]="xzRateItemDisplay" modal="modal" width="500" responsive="true">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">费用项目</label>
+      <div class="col-sm-7">
+        <p-dropdown [options]="RateItems" [(ngModel)]="selectedRateItem" placeholder="选择费用项目"
+                    [style]="{'width':'130px'}" name="xzRateItem"></p-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">计费名称</label>
+      <div class="col-sm-7">
+        <p-dropdown [options]="RateItemName" [(ngModel)]="selectedRateItemName" name="xzRateItemName"
+                    placeholder="选择计费名称"
+                    [style]="{'width':'130px'}"></p-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="xzRateItemPrice" class="col-sm-4 control-label">单价(元/吨)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="xzRateItemPrice" name="xzRateItemPrice"
+               placeholder="单价">
+      </div>
+    </div>
+  </form>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <button type="button" pButton icon="fa-close" class="button-qx"
+              label="取消" (click)="xzRateItemDisplay = false"></button>
+      <button type="button" pButton icon="fa-check" label="确认" (click)="xzRateItemDisplay = false"></button>
+    </div>
+  </p-footer>
+</p-dialog>
+
+<p-dialog header="新增阶梯水价" [(visible)]="xzLadderPriceDisplay" modal="modal" width="500" responsive="true">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">阶梯级别</label>
+      <div class="col-sm-7">
+        <p-dropdown [options]="ladder" [(ngModel)]="selectedLadder" placeholder="选择阶梯级别"
+                    [style]="{'width':'130px'}" name="xzladder"></p-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">人数</label>
+      <div class="col-sm-7">
+        <p-dropdown [options]="ladderPeople" [(ngModel)]="selectedLadderPeople" name="xzLadderPeople"
+                    placeholder="选择人数"
+                    [style]="{'width':'130px'}"></p-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="xzQsl" class="col-sm-4 control-label">起始量(元/吨)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="xzQsl" name="xzQsl"
+               placeholder="起始量">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="xzZzl" class="col-sm-4 control-label">终止量(元/吨)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="xzZzl" name="xzZzl"
+               placeholder="终止量">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="xzDj" class="col-sm-4 control-label">单价(元/吨)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="xzDj" name="xzDj"
+               placeholder="单价">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="xzMrzjl" class="col-sm-4 control-label">每人增加量(吨)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="xzMrzjl" name="xzMrzjl"
+               placeholder="每人增加量">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="xzZdzjl" class="col-sm-4 control-label">最大增加量(吨)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="xzZdzjl" name="xzZdzjl"
+               placeholder="最大增加量">
+      </div>
+    </div>
+
+  </form>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <button type="button" pButton icon="fa-close" class="button-qx"
+              label="取消" (click)="xzLadderPriceDisplay = false"></button>
+      <button type="button" pButton icon="fa-check" label="确认" (click)="xzLadderPriceDisplay = false"></button>
+    </div>
+  </p-footer>
+</p-dialog>

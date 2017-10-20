@@ -1,0 +1,137 @@
+<div class="dialog-wallpaper">
+    <div class="dialog-container">
+        <span class="closeDialog" (click)="closeme('close')">
+             <b class="fa fa-w fa-close"></b>
+        </span>
+        <div class="dialog-content">
+            <div class="content-title">
+                <p>基本信息</p>
+            </div>
+            <form class="form-horizontal">
+                <div class="ui-g">
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkApplicantName" class="col-sm-3 control-label">申请人姓名</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="jtrkApplicantName" name="jtrkApplicantName"
+                                       [(ngModel)]="jtrkApplicantName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkApplicantPhone" class="col-sm-3 control-label">手机号</label>
+                            <div class="col-sm-9">
+                                <p-inputMask [(ngModel)]="applicantPhone" mask="999-9999-9999" id="jtrkApplicantPhone"
+                                             name="jtrkApplicantPhone"></p-inputMask>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkUserCode" class="col-sm-3 control-label">客户编码</label>
+                            <div class="col-sm-9">
+                                <input type="text" [(ngModel)]="jtrkUserCode" class="form-control" id="jtrkUserCode"
+                                       name="jtrkUserCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkUserName" class="col-sm-3 control-label">客户名称</label>
+                            <div class="col-sm-9">
+                                <input type="text" [(ngModel)]="jtrkUserName" class="form-control" id="jtrkUserName"
+                                       name="jtrkUserName" #jtrkUserNameChild>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkYyhCode" class="col-sm-3 control-label">营业户编码</label>
+                            <div class="col-sm-9">
+                                <p-dropdown id="jtrkYyhCode" name="jtrkYyhCode" [options]="yyhCode"
+                                            [(ngModel)]="selectedYyhCode"></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkYyhName" class="col-sm-3 control-label">营业户名称</label>
+                            <div class="col-sm-9">
+                                <input [(ngModel)]="jtrkYyhName" type="text" class="form-control" id="jtrkYyhName"
+                                       name="jtrkYyhName">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkYyhAdr" class="col-sm-3 control-label">营业户地址</label>
+                            <div class="col-sm-9">
+                                <input type="text" [(ngModel)]="jtrkYyhAdr" class="form-control" id="jtrkYyhAdr"
+                                       name="jtrkYyhAdr">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-6">
+                        <div class="form-group">
+                            <label for="jtrkUserState" class="col-sm-3 control-label">用户状态</label>
+                            <div class="col-sm-9">
+                                <input type="text" [(ngModel)]="jtrkUserState" class="form-control" id="jtrkUserState"
+                                       name="jtrkUserState">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="content-title">
+                <p>阶梯人口信息</p>
+            </div>
+            <div class="my-btn-group">
+                <button pButton type="button" label="新增" class="ui-button-success" icon="fa-plus-circle"
+                        iconPos="left" (click)="xzUserJtrksDisplay = true"></button>
+                <button pButton type="button" label="删除" class="ui-button-danger"
+                        icon="fa fa-trash-o"
+                        iconPos="left"></button>
+            </div>
+            <p-dataTable [tableStyleClass]="'table-yj'" [value]="userJtrks" selectionMode="multiple"
+                         [(selection)]="selectedUserJtrk">
+                <p-header><p class="text-left">阶梯人口数: <span>2</span></p></p-header>
+                <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+                <p-column field="name" header="姓名"></p-column>
+                <p-column field="userId" header="身份证号"></p-column>
+            </p-dataTable>
+        </div>
+    </div>
+</div>
+
+<p-dialog header="新增阶梯人口" [(visible)]="xzUserJtrksDisplay" modal="modal" width="500" responsive="true">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="xzUserJtrksName" class="col-sm-3 control-label">姓名</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="xzUserJtrksName" name="xzUserJtrksName"
+                       placeholder="用水性质名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="xzUserJtrksId" class="col-sm-3 control-label">身份证号</label>
+            <div class="col-sm-7">
+                <input type="password" class="form-control" id="xzUserJtrksId" name="xzUserJtrksId"
+                       placeholder="用水性质编码">
+            </div>
+        </div>
+    </form>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button type="button" pButton icon="fa-close" class="button-qx" (click)="xzUserJtrksDisplay=false"
+                    label="取消"></button>
+            <button type="button" pButton icon="fa-check" (click)="xzUserJtrksDisplay=false" label="确认"></button>
+        </div>
+    </p-footer>
+</p-dialog>

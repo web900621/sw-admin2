@@ -1,0 +1,68 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+  <form class="form">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label>录入时间</label>
+          <input type="text" class="form-control" name="writeofflrsj"
+                 placeholder="录入时间">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="bookadjustmentcbmc">录入人</label>
+          <input type="email" class="form-control" id="bookadjustmentcbmc" name="bookadjustmentcbmc"
+                 placeholder="录入人">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="bookadjustmentlcddw">解款单号</label>
+          <input type="email" class="form-control" id="bookadjustmentlcddw" name="bookadjustmentlcddw"
+                 placeholder="解款单号">
+        </div>
+      </div>
+    </div>
+    <div class="my-btn-group">
+      <button pButton type="button" label="查询" class="ui-button-info" icon="fa-search"
+              iconPos="left" (click)="cxJkd()"></button>
+      <button pButton type="button" label="核销" class="ui-button-warning" icon="fa-arrows-h"
+              iconPos="left" #btnWriteoff (click)="confirm()"></button>
+    </div>
+  </form>
+  <div class="ui-g ui-g-nopad">
+    <div class="ui-g-6 ui-g-nopad">
+      <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="JKD"
+                   selectionMode="multiple"
+                   [(selection)]="selectedJKD"
+                   (onRowSelect)="onVlueChange()"
+                   (onRowUnselect)="onVlueChange()"
+                   (onHeaderCheckboxToggle)="onVlueChange()">
+        <p-header><b>解款单信息</b></p-header>
+        <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+        <p-column field="jkdh" header="解款单号"></p-column>
+        <p-column field="je" header="金额"></p-column>
+        <p-column field="lrr" header="录入人"></p-column>
+        <p-column field="lrsj" header="录入时间"></p-column>
+        <p-column field="bz" header="备注"></p-column>
+      </p-dataTable>
+    </div>
+    <div class="ui-g-6 ui-g-nopad">
+      <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="JZJE"
+                   selectionMode="multiple"
+                   [(selection)]="selectedJZJE"
+                   (onRowSelect)="onVlueChange()"
+                   (onRowUnselect)="onVlueChange()"
+                   (onHeaderCheckboxToggle)="onVlueChange()">
+        <p-header><b>结账信息</b></p-header>
+        <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+        <p-column field="sfbs" header="收费笔数"></p-column>
+        <p-column field="ssje" header="实收金额"></p-column>
+        <p-column field="sfy" header="收费员"></p-column>
+        <p-column field="jzrq" header="结账日期"></p-column>
+      </p-dataTable>
+    </div>
+  </div>
+
+
+</div>

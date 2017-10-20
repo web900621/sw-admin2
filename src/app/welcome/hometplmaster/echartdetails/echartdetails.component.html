@@ -1,0 +1,31 @@
+<div class="echart-details" ngDraggable >
+  <span class="colseDetails" (click)="closeDetails()">&times;</span>
+  <span class="moveicon" #DemoHandle></span>
+  <div class="echart-details-box" #echartDetailsBox></div>
+  <div class="data-details-box">
+    <div class="data-details-title">
+      <p>地区</p>
+      <p>用水分类</p>
+      <p>销售金额</p>
+    </div>
+    <div class="data-details-body">
+      <div class="dq">{{data.name}}</div>
+      <div class="ysfl">
+        <p>居民用水</p>
+        <p>经营用水</p>
+        <p>工业用水</p>
+        <p>基建用水</p>
+        <p>特种行业用水</p>
+        <p>行政事业单位用水</p>
+      </div>
+      <div class="xsje">
+        <p>{{data.jmys}}万元</p>
+        <p>{{data.jyys}}万元</p>
+        <p>{{data.gyys}}万元</p>
+        <p>{{data.jjys}}万元</p>
+        <p>{{data.tzhyys}}万元</p>
+        <p>{{data.xzsydwys}}万元</p>
+      </div>
+    </div>
+  </div>
+</div>

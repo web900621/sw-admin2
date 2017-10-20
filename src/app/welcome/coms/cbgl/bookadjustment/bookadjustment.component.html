@@ -1,0 +1,59 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+    <p-tabView [styleClass]="'tabView-yj'">
+        <p-tabPanel header="册内调整">
+            <div class="content-title">
+                <p>当前册本</p>
+            </div>
+            <form class="form">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>册本号</label>
+                            <input type="text" class="form-control" name="BookadjustmentNum"
+                                   placeholder="册本号">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>册本名称</label>
+                            <input type="email" class="form-control" name="BookadjustmentName"
+                                   placeholder="册本名称">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="my-btn-group" style="margin-top: 25px">
+                            <button pButton type="button" label="查询" class="ui-button-info" icon="fa-search"
+                                    iconPos="left" (click)="cxBookData()"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <p-orderList (onReorder)="onBookDataReorder()" [value]="bookData" [styleClass]="'cntz-orderlist'"
+                         [listStyle]="{'height':'350px','width':'100%'}" header="册本调整"
+                         filter="filter" filterBy="lcdbm" filterPlaceholder="量测点快速定位" dragdrop="true">
+                <ng-template let-obj pTemplate="item">
+                    <div class="ui-helper-clearfix bookData-body">
+                        <p>{{obj.cnxh}}</p>
+                        <p>{{obj.lcdbm}}</p>
+                        <p>{{obj.yyhbm}}</p>
+                        <p>{{obj.yyhmc}}</p>
+                        <p>{{obj.yyhdz}}</p>
+                    </div>
+                </ng-template>
+            </p-orderList>
+            <div *ngFor="let o of bookData">
+                {{o.cnxh}}
+            </div>
+            <div class="my-btn-group" style="text-align: center;margin-top:25px;">
+                <button pButton type="button" label="序号重排" class="ui-button-warning" icon="fa-sort-numeric-asc"
+                        iconPos="left"></button>
+                <button pButton type="button" label="提交修改" class="ui-button-danger" icon="fa-check"
+                        iconPos="left"></button>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="册间调整">
+            <p>111</p>
+        </p-tabPanel>
+    </p-tabView>
+
+</div>

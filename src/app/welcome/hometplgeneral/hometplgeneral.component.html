@@ -1,0 +1,28 @@
+<div class="wallpaper">
+  <div #child{{index}} class="card"
+       [ngClass]="{
+            'card25':p.width==1,
+            'card50':p.width==2,
+            'card75':p.width==3,
+            'card100':p.width==4,
+            'height1':p.height==1}" *ngFor="let p of portlets;let index = index;">
+    <div class="box">
+      <div class="box-title">
+        <p>{{p.name}}</p>
+      </div>
+      <div class="box-body">
+        <app-cygn *ngIf="p.portletType==3"></app-cygn>
+        <jhi-datastatistics *ngIf="p.portletType==4"></jhi-datastatistics>
+        <jhi-datastatistics2 *ngIf="p.portletType==41"></jhi-datastatistics2>
+        <jhi-datastatistics3 *ngIf="p.portletType==42"></jhi-datastatistics3>
+        <jhi-recovery *ngIf="p.portletType==5"></jhi-recovery>
+        <jhi-copyrate *ngIf="p.portletType==6"></jhi-copyrate>
+        <jhi-paymentmethod *ngIf="p.portletType==7"></jhi-paymentmethod>
+        <jhi-waterquality *ngIf="p.portletType==8"></jhi-waterquality>
+        <jhi-charge *ngIf="p.portletType==9"></jhi-charge>
+        <jhi-chargemoney *ngIf="p.portletType==10"></jhi-chargemoney>
+        <jhi-blankreports *ngIf="p.portletType==0"></jhi-blankreports>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+
+.dialog-wallpaper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.dialog-wallpaper .dialog-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    transition: all .3s;
+    transition-delay: .1s;
+    box-shadow: #666 0 0 10px;
+    background-color: #fff;
+}
+
+.closeDialog {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    font-size: 16px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.closeDialog > b {
+    font-weight: 400;
+    padding: 3px 5px;
+}
+
+.closeDialog:hover {
+    border-color: #c0c0c0;
+    background: #eeeeee;
+    color: #212121;
+}
+
+.dialog-content {
+    padding: 15px;
+}

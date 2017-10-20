@@ -1,0 +1,57 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+  <form class="form">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label>收费日期</label>
+          <p-calendar [(ngModel)]="settlementSFRQ" name="ChargeDate"
+                      [style]="{'width':'100%'}"></p-calendar>
+
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-group">
+          <label class="isCheckoutLabel">是否结账</label>
+          <p-dropdown [style]="{'width':'100px'}" name="SettlementIsCheckout" [options]="isCheckout"
+                      [(ngModel)]="selectedIsCheckout"></p-dropdown>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label>收费员</label>
+          <input type="text" class="form-control"
+                 name="SettlementCashier" placeholder="收费员">
+        </div>
+      </div>
+    </div>
+    <div class="my-btn-group">
+      <button pButton type="button" label="查询" class="ui-button-info" icon="fa-search"
+              iconPos="left" (click)="cxSFXX()"></button>
+      <button pButton type="button" label="收款" class="ui-button-warning"
+              icon="fa fa-cny"
+              iconPos="left" (click)="addSettlementChildComponent()" #btnSK></button>
+    </div>
+  </form>
+  <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="SFXX">
+    <p-column field="khbm" header="客户编码"></p-column>
+    <p-column field="khmc" header="客户名称"></p-column>
+    <p-column field="yyhbm" header="营业户编码"></p-column>
+    <p-column field="kzsl" header="开账水量"></p-column>
+    <p-column field="qfje" header="欠费金额"></p-column>
+    <p-column field="cbh" header="册本号"></p-column>
+    <p-column field="zwn" header="账务年"></p-column>
+    <p-column field="zwy" header="账务月"></p-column>
+    <p-column field="yjje" header="一阶金额"></p-column>
+    <p-column field="ejje" header="二阶金额"></p-column>
+    <p-column field="sjje" header="三阶金额"></p-column>
+    <p-column field="sswyj" header="实收违约金"></p-column>
+    <p-column field="jmwyj" header="减免违约金"></p-column>
+    <p-column field="yswyj" header="应收违约金"></p-column>
+    <p-column field="kzrq" header="开账日期"></p-column>
+    <p-column field="ysxz" header="用水性质"></p-column>
+    <p-column field="cbzt" header="抄表状态"></p-column>
+  </p-dataTable>
+
+  <div #JZDmroom></div>
+
+</div>

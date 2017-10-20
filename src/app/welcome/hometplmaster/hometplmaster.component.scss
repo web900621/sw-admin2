@@ -1,0 +1,145 @@
+
+.hidden-y {
+  overflow-y: hidden;
+}
+
+.box {
+  font-size: 10px;
+  padding-left: .8em;
+  padding-right: .8em;
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+.echart-box {
+  padding-top: 8em;
+  position: relative;
+  overflow: hidden;
+}
+
+#from-zwny {
+  margin-top: 1em;
+}
+
+.homeEchart {
+  height: 105%;
+  position: relative;
+  top: -8%;
+  background-color: transparent !important;
+}
+
+p-dropdown {
+  margin-right: 1em;
+}
+
+.top10 {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.top10 .box-title {
+  padding-bottom: 0;
+}
+
+.top10 .box-title > p {
+  border-bottom: none;
+}
+
+.top10 .top10-title {
+  background-color: #F1F1F1;
+  text-align: center;
+  overflow: auto;
+  margin-bottom: .3em;
+}
+
+.top10 .box-body p {
+  font-size: 1.3em;
+  float: left;
+  padding: .32em 0;
+  margin: 0;
+  text-align: center;
+}
+
+.top10 .box-body p:nth-child(1) {
+  width: 11%;
+}
+
+.top10 .box-body p:nth-child(2) {
+  width: 30%;
+  text-align: left;
+  word-break: keep-all; /* 不换行 */
+  white-space: nowrap; /* 不换行 */
+  overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis;
+}
+
+.top10 .box-body p:nth-child(3) {
+  width: 24%;
+}
+
+.top10 .box-body p:nth-child(4) {
+  width: 21%;
+}
+
+.top10 .box-body p:nth-child(5) {
+  width: 14%
+}
+
+.top10-item {
+  padding: 0.1em 0;
+  overflow: auto;
+  cursor: default;
+  transition: all .3s;
+
+}
+
+@media screen  and (max-width: 1400px) {
+  .top10-item {
+    padding: 0;
+  }
+}
+
+.top10-item:hover {
+  background-color: #F1F1F1;
+}
+
+.top10-item .orderNum {
+  display: inline-block;
+  color: #fff;
+  width: 1.15em;
+  height: 1.15em;
+  line-height: 1.15em;
+  background-color: #8DB8F5;
+}
+
+.top10-item:nth-child(2) .orderNum {
+  background-color: #FE0000;
+}
+
+.top10-item:nth-child(3) .orderNum {
+  background-color: #FE8446;
+}
+
+.top10-item:nth-child(4) .orderNum {
+  background-color: #FFAB36;
+}
+
+.box-title form {
+  font-size: 1.4em;
+}
+
+.box-title form .form-group {
+  padding-left: .5em;
+}
+
+.box-title form label {
+  color: #999;
+  margin-right: 1em;
+}
+
+.box-title > .cygn-bj {
+  float: right;
+  cursor: pointer;
+  margin-right: .8em;
+  font-size: 1.4em;
+  line-height: 2em;
+}

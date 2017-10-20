@@ -1,0 +1,19 @@
+{
+    "name": "抄表人员默认首页模型",
+    "type": "2",
+    "data": [
+        {
+            "name": "数据统计",
+            "width": 3,
+            "height": 1,
+            "url": "",
+            "portletType": "42"
+        },
+        {
+            "name": "常用功能",
+            "width": 1,
+            "height": 1,
+            "portletType": "3"
+        }
+    ]
+}

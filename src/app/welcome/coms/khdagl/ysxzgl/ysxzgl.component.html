@@ -1,0 +1,68 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+  <div class="my-btn-group">
+    <button pButton type="button" class="ui-button-success" (click)="xzysxz()" label="新增" icon="fa-plus-circle"
+            iconPos="left"></button>
+  </div>
+  <p-dataTable [value]="ysxzgl" [tableStyleClass]="'table-yj'">
+    <p-column field="ysxzmc" header="用水性质名称"></p-column>
+    <p-column field="ysxzbm" header="用水性质编码" [style]="{'textAlign':'center'}"></p-column>
+    <p-column styleClass="col-button" [style]="{'textAlign':'center'}">
+      <ng-template pTemplate="header">
+        <p class="text-center">操作</p>
+      </ng-template>
+      <ng-template let-index="rowIndex" pTemplate="body">
+        <button type="button" pButton (click)="xgysxz()" icon="fa-edit" iconPos="left"
+                class="ui-button-icon no-text-button text-color-secondary"></button>
+        <button type="button" pButton (click)="confirm(index)" icon="fa fa-trash-o " iconPos="left"
+                class="ui-button-danger no-text-button text-color-danger"></button>
+      </ng-template>
+    </p-column>
+  </p-dataTable>
+  <p-dialog header="修改用水性质" [(visible)]="xgYsxzDispaly" modal="modal" width="500" responsive="true">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="xgysxzbm" class="col-sm-3 control-label">用水性质名称</label>
+        <div class="col-sm-7">
+          <input type="email" class="form-control" id="xgysxzmc" name="xgysxzmc" placeholder="用水性质名称">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="xgysxzbm" class="col-sm-3 control-label">用水性质编码</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" id="xgysxzbm" name="xgysxzbm" placeholder="用水性质编码">
+        </div>
+      </div>
+    </form>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <button type="button" pButton icon="fa-close" class="button-qx" (click)="xgYsxzDispaly=false"
+                label="取消"></button>
+        <button type="button" pButton icon="fa-check" (click)="xgYsxzDispaly=false" label="确认"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+  <p-dialog header="新增用水性质" [(visible)]="xzYsxzDispaly" modal="modal" width="500" responsive="true">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="xzysxzmc" class="col-sm-3 control-label">用水性质名称</label>
+        <div class="col-sm-7">
+          <input type="email" class="form-control" id="xzysxzmc" name="xzysxzmc" placeholder="用水性质名称">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="xzysxzmc" class="col-sm-3 control-label">用水性质编码</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" id="xzysxzbm" name="xzysxzbm" placeholder="用水性质编码">
+        </div>
+      </div>
+    </form>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <button type="button" pButton icon="fa-close" class="button-qx" (click)="xzYsxzDispaly=false"
+                label="取消"></button>
+        <button type="button" pButton icon="fa-check" (click)="xzYsxzDispaly=false" label="确认"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
+</div>

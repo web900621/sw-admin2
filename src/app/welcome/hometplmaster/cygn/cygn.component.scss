@@ -1,0 +1,78 @@
+
+.cygn-container {
+  padding-top: 1.5em;
+}
+
+.cygn-bj {
+  cursor: pointer;
+  font-size: 1.4em;
+  line-height: 2em;
+  position: absolute;
+  top: -2em;
+  right: 1em;
+  z-index: 199;
+}
+
+.appItem {
+  width: 33.33%;
+  float: left;
+  margin: 0;
+}
+
+.appItem dl {
+  cursor: pointer;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.appItem dl > dt > img {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1400px) {
+  .inmaster .appItem dl > dt > img {
+    width: 32px;
+  }
+}
+
+.appItem dl > dd {
+  text-align: center;
+  padding: .7em 0;
+  color: #333;
+}
+
+.dialog-wallpaper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 999;
+}
+
+
+.dialog-wallpaper .dialog-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 620px;
+  transition: all .3s;
+  transition-delay: .1s;
+  box-shadow: #666 0 0 10px;
+  background-color: #fff;
+}
+
+
+.closeDialog {
+  position: absolute;
+  top: -6px;
+  right: 6px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 1000;
+}
+

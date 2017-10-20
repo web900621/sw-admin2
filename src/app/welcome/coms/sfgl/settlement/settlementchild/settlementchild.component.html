@@ -1,0 +1,35 @@
+<div class="dialog-wallpaper">
+    <div class="dialog-container">
+        <span class="closeDialog " (click)="closeme('close')">
+            <b class="fa fa-w fa-close"></b>
+        </span>
+        <div class="dialog-content">
+            <div class="content-title">
+                <p>结账</p>
+            </div>
+            <div class="toggle-content">
+                <div class="data-details-box">
+                    <div class="data-details-title">
+                        <p></p>
+                        <p>笔数</p>
+                        <p>金额</p>
+                    </div>
+                    <div class="data-details-body">
+                        <div class="item" *ngFor="let item of JZXX;let index =index;">
+                            <p>{{item.name}}</p>
+                            <p>{{item.num}}</p>
+                            <p>{{item.value}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g">
+                <div class="my-btn-group">
+                    <button pButton type="button" label="结账" class="ui-button-danger" icon="fa-cny"
+                            iconPos="left" (click)="payDone()"></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

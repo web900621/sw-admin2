@@ -1,0 +1,20 @@
+<div class="datastatistice-container">
+    <div [ngSwitch]="titleCase">
+        <div class="bj-container" *ngSwitchCase=1>
+            <p-dropdown class="text-center" [options]="chooseType" [style]="{'width':'120px'}" [(ngModel)]="selectedType" (onChange)="onTypeChange()">
+            </p-dropdown>
+            <p-dropdown class="text-center" [style]="{'marginLeft':'5px','width':'60px'}" [options]="chooseWidth"
+                        [(ngModel)]="selectedWidth" (onChange)="onWidthChange()">
+            </p-dropdown>
+            <button pButton type="button" class="ui-button-danger btn-confirm"  label="删除" (click)="delMe()"></button>
+            <!--<button pButton type="button" class="ui-button-secondary-info btn-confirm"  label="确认" style="margin-right: 10px" (click)="confirmReports()"></button>-->
+
+        </div>
+        <div class="bj-container" style="background-color: transparent" *ngIf="editReportsIsShow">
+            <button pButton type="button" class="ui-button-warning btn-confirm"  label="编辑"  (click)="editReports()" ></button>
+        </div>
+        <div *ngSwitchDefault></div>
+    </div>
+    <div class="reports-container" #report>
+    </div>
+</div>

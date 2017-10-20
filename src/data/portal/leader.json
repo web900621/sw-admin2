@@ -1,0 +1,43 @@
+{
+    "name": "水司领导首页模型",
+    "type": "2",
+    "portlets": [
+        {
+            "name": "数据统计",
+            "width": 3,
+            "height": 1,
+            "url":"",
+            "portletType": "4"
+        },
+        {
+            "name": "常用功能",
+            "width": 1,
+            "height": 1,
+            "portletType": "3"
+        },{
+            "name": "回收率",
+            "width": 2,
+            "height": 1,
+            "url":"",
+            "portletType": "5"
+        },{
+            "name": "全年抄表率",
+            "width": 2,
+            "height": 1,
+            "url":"",
+            "portletType": "6"
+        },{
+            "name": "缴费方式统计",
+            "width": 1,
+            "height": 1,
+            "url":"",
+            "portletType": "7"
+        },{
+            "name": "用水性质分类统计",
+            "width": 3,
+            "height": 1,
+            "url":"",
+            "portletType": "8"
+        }
+    ]
+}

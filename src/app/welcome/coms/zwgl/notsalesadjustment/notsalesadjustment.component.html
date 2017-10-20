@@ -1,0 +1,62 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+  <form class="form">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label>用户编号</label>
+          <input type="text" class="form-control" name="notsalesUserCode"
+                 placeholder="用户编号">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label>账务月</label>
+          <p-dropdown name="notsalesAccountingMonth" placeholder="选择账务月" [options]="accountingMonth"
+                      [style]="{'width':'100%'}" [(ngModel)]="selectedAccountingMonth"></p-dropdown>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label>账务年</label>
+          <p-dropdown name="notsalesAccountingYear" placeholder="选择账务年" [options]="accountingYear"
+                      [style]="{'width':'100%'}" [(ngModel)]="selectedAccountingYear"></p-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="my-btn-group">
+      <button pButton type="button" label="查询" class="ui-button-info" icon="fa-search"
+              iconPos="left" (click)="cxNotsales()"></button>
+    </div>
+  </form>
+  <p-dataTable [style]="{'textAlign':'center'}" [tableStyleClass]="'table-yj'" [value]="notsalesadjustmentData"
+               selectionMode="single"
+               [loading]="loading"
+               [(selection)]="selectedNotsalesadjustmentData"
+               (onRowSelect)="onNotsalesadjustmentDataRowSelect($event.data)">
+    <p-column [style]="{'width':'38px'}" selectionMode="single"></p-column>
+    <p-column field="sbbh" header="水表编号"></p-column>
+    <p-column field="zwn" header="账务年"></p-column>
+    <p-column field="zwy" header="账务月"></p-column>
+    <p-column field="kzsl" header="开账水量"></p-column>
+    <p-column field="kzje" header="开账金额"></p-column>
+    <p-column field="hm" header="户名"></p-column>
+    <p-column field="dz" header="地址" [style]="{'width':'200px'}"></p-column>
+    <p-column field="jbsf" header="基本水费"></p-column>
+    <p-column field="wsclf" header="污水处理费"></p-column>
+    <p-column field="slgcsf" header="水利工程水费"></p-column>
+    <p-column field="szyf" header="水资源费"></p-column>
+    <p-column field="csfjf" header="城市附加费"></p-column>
+    <p-column styleClass="col-button">
+      <ng-template pTemplate="header">
+        <p class="text-center">操作</p>
+      </ng-template>
+      <ng-template let-index="rowIndex" pTemplate="body" let-rowData="rowData">
+        <button type="button" pButton icon="fa fa-refresh " iconPos="left"
+                label="调整" class="ui-button-warning no-text-button text-color-warning"
+                (click)="onNotsalesadjustmentDataRowSelect(rowData)"></button>
+
+      </ng-template>
+    </p-column>
+  </p-dataTable>
+  <div #adjustmentDmroom></div>
+</div>
