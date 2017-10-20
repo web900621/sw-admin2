@@ -5,7 +5,9 @@
         <p>选择替换功能</p>
         <span class="pxgz">排序规则</span>
         <p-inputSwitch [styleClass]="'my-switch'" onLabel="自定义"
-                       offLabel="使用频率"  [(ngModel)]="pxgz" (onChange)="handleChange($event)" ></p-inputSwitch>
+                       offLabel="使用频率" [(ngModel)]="pxgz" (onChange)="handleChange($event)"></p-inputSwitch>
+        <div class="yx" *ngIf="yxdisplay"><span>已选</span><span *ngFor="let sapp of selectedApps">{{sapp.name}}</span>
+        </div>
       </div>
       <div class="my-container" [ngClass]="{'hid':!pxgz}">
         <div class="app-group" *ngFor="let apps of allApps;let index = index;">

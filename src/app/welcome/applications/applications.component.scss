@@ -193,3 +193,31 @@
   display: block;
 }
 
+
+.dialog-title .pxgz {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.dialog-title .yx {
+  overflow: auto;
+  font-size: 14px;
+  height: 65px;
+  position: absolute;
+  bottom:-70px;
+}
+
+.dialog-title .yx span {
+  float: left;
+  padding: 4px 8px;
+  background-color: #E1DFDA;
+  border-radius: 6px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+
+.dialog-title .yx span:nth-child(1) {
+  background-color: transparent;
+  text-align: right;
+  width: 64px;
+}

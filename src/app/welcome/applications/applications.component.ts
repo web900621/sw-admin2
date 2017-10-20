@@ -5,12 +5,14 @@ import {GrowlService} from '../../shared/globalmsg.service';
 import {NavtabService} from '../nav/nav-tab/navtab.service';
 import {ToggleWorkSpaceService} from '../toggle-work-space.service';
 import {EventbusService} from '../eventbus.service';
+
 @Component({
   selector: 'app-applications',
   templateUrl: './applications.component.html',
   styleUrls: ['./applications.component.scss']
 })
 export class ApplicationsComponent implements OnInit {
+  public yxdisplay: boolean = false;
   public allApps: any = [];
   public pxgz: boolean = true;
   private selectedApps: any = [];
@@ -89,13 +91,16 @@ export class ApplicationsComponent implements OnInit {
   handleChange(e) {
     if (!this.pxgz) {
       this.getAppsByAfrequency();
+      this.yxdisplay = true;
     } else {
       this.selectedApps = [];
+      this.yxdisplay = false;
     }
   }
 
   getAppsByAfrequency() {
     this.applicationsService.getAppsByFreq().subscribe((res) => {
+      console.log(res.json().data);
       this.selectedApps = res.json().data;
     })
   }
