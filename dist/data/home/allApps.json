@@ -1,0 +1,113 @@
+{
+  "data": [
+    {
+      "AppsTitle": "客户档案管理",
+      "Apps": [
+        {
+          "name": "阶梯人口申请",
+          "id": "jtrksq",
+          "imgSrc": "/assets/imgs/appIcon/jtrksq.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/jtrksq.png"
+        },
+        {
+          "name": "用水性质管理",
+          "id": "ysxzgl",
+          "imgSrc": "/assets/imgs/appIcon/ysxzgl.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/ysxzgl.png"
+        },
+        {
+          "name": "水价调整",
+          "id": "waterpriceadjustment",
+          "imgSrc": "/assets/imgs/appIcon/sjtz.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/sjtz.png"
+        }
+      ]
+    },
+    {
+      "AppsTitle": "抄表管理",
+      "Apps": [
+        {
+          "name": "手工录入",
+          "id": "manualinput",
+          "imgSrc": "../../../assets/imgs/appIcon/sglr.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/sglr.png"
+        },
+        {
+          "name": "远程抄表录入",
+          "id": "remoteinput",
+          "imgSrc": "../../../assets/imgs/appIcon/yccblr.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/yccblr.png"
+        },
+        {
+          "name": "表册调整",
+          "id": "bookadjustment",
+          "imgSrc": "../../../assets/imgs/appIcon/bctz.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/bctz.png"
+        }
+      ]
+    },
+    {
+      "AppsTitle": "收费管理",
+      "Apps": [
+        {
+          "name": "柜台收费",
+          "id": "countercharges",
+          "imgSrc": "../../../assets/imgs/appIcon/gtsf.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/gtsf.png"
+        },
+        {
+          "name": "预付费水表收费",
+          "id": "prepaidwatermeterfee",
+          "imgSrc": "../../../assets/imgs/appIcon/yffsbsf.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/yffsbsf.png"
+        },
+        {
+          "name": "结账",
+          "id": "settlement",
+          "imgSrc": "../../../assets/imgs/appIcon/jz.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/jz.png"
+        },
+        {
+          "name": "核销",
+          "id": "writeoff",
+          "imgSrc": "../../../assets/imgs/appIcon/kx.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/kx.png"
+        }
+      ]
+    },
+    {
+      "AppsTitle": "账务管理",
+      "Apps": [
+        {
+          "name": "未销调整",
+          "id": "notsalesadjustment",
+          "imgSrc": "../../../assets/imgs/appIcon/wxtz.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/wxtz.png"
+        },
+        {
+          "name": "违约金减免处理",
+          "id": "liquidateddamagesreduction",
+          "imgSrc": "../../../assets/imgs/appIcon/wyjjmcl.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/wyjjmcl.png"
+        }
+      ]
+    },
+    {
+      "AppsTitle": "发票管理",
+      "Apps": [
+        {
+          "name": "发票作废",
+          "id": "invoicedumped",
+          "imgSrc": "../../../assets/imgs/appIcon/fpzf.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/fpzf.png"
+        },
+        {
+          "name": "发票打印",
+          "id": "print",
+          "imgSrc": "../../../assets/imgs/appIcon/fpzf.png",
+          "imgNavSrc": "../../../../assets/imgs/appNavIcon/fpzf.png"
+        }
+      ]
+    }
+  ]
+}

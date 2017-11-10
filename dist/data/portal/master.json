@@ -1,0 +1,30 @@
+{
+    "name": "master测试模型",
+    "type": "1",
+    "portlets": [
+        {
+            "name": "echart",
+            "width": 3,
+            "height": 3,
+            "iconType": "1",
+            "icon": "fa fa-desktop",
+            "portletType": "1"
+        },
+        {
+            "name": "新闻公告",
+            "width": 1,
+            "height": 2,
+            "iconType": "1",
+            "icon": "fa fa-save",
+            "portletType": "2"
+        },
+        {
+            "name": "常用功能",
+            "width": 1,
+            "height": 1,
+            "iconType": "1",
+            "icon": "fa fa-save",
+            "portletType": "3"
+        }
+    ]
+}

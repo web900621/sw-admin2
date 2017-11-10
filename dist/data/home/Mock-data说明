@@ -1,0 +1,30 @@
+cygn.json
+    name ：应用名称
+    id ：应用的id符
+    imgSrc： 应用图标
+    imgNavSrc: 应用导航图标
+
+MaoJX.json
+    首页绘制地图数据
+
+ssgk.json
+     name: 地图标记点的名称
+     value: 标记点的百度地图经纬度
+     index: 标记点的索引(可作为主键)
+     detaildata:
+                name: 详情表左侧地名
+                sl: 仪表盘所需数据
+                recovery: 饼图所需数据
+                jmys: 居民用水量
+                jyys: 用水量
+                gyys: 工业用水量
+                jjys: 基建用水量
+                tzhyys: 特种行业用水量
+                xzsydwys: 行政事业单位用水量
+
+top10.json
+     orderNum: 排名
+     cname: 水司单位名称
+     monthIncome: 月收入
+     monthSl: 月水量
+     recovery: 回收率
