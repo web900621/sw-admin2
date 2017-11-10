@@ -57,7 +57,7 @@ import {importComs} from './comMgr';
     HometplgeneralComponent,
     EchartdetailsComponent,
     CygnComponent,
-    ...importComs
+    ...importComs,
   ],
   imports: [
     CommonModule,

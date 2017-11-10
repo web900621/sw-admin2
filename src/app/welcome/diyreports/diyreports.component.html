@@ -10,19 +10,19 @@
             <div class="box-title" [ngSwitch]="titleCase">
                 <p *ngSwitchDefault>{{p.name}}</p>
             </div>
-            <div class="box-body">
-                <jhi-blankreports *ngIf="p.portletType==0" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-blankreports>
-                <jhi-datastatistics *ngIf="p.portletType==4"></jhi-datastatistics>
-                <jhi-datastatistics2 *ngIf="p.portletType==41"></jhi-datastatistics2>
-                <jhi-datastatistics3 *ngIf="p.portletType==42"></jhi-datastatistics3>
-                <app-cygn *ngIf="p.portletType==3"></app-cygn>
+            <div class="box-body" [ngSwitch]="p.portletType">
+                <jhi-blankreports *ngSwitchCase="0" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-blankreports>
+                <jhi-datastatistics *ngSwitchCase="4"></jhi-datastatistics>
+                <jhi-datastatistics2 *ngSwitchCase="41"></jhi-datastatistics2>
+                <jhi-datastatistics3 *ngSwitchCase="42"></jhi-datastatistics3>
+                <app-cygn *ngSwitchCase="3"></app-cygn>
 
-                <jhi-recovery *ngIf="p.portletType==5" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-recovery>
-                <jhi-copyrate *ngIf="p.portletType==6" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-copyrate>
-                <jhi-paymentmethod *ngIf="p.portletType==7" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-paymentmethod>
-                <jhi-waterquality *ngIf="p.portletType==8" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-waterquality>
-                <jhi-charge *ngIf="p.portletType==9" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-charge>
-                <jhi-chargemoney *ngIf="p.portletType==10" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-chargemoney>
+                <jhi-recovery *ngSwitchCase="5" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-recovery>
+                <jhi-copyrate *ngSwitchCase="6" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-copyrate>
+                <jhi-paymentmethod *ngSwitchCase="7" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-paymentmethod>
+                <jhi-waterquality *ngSwitchCase="8" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-waterquality>
+                <jhi-charge *ngSwitchCase="9" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-charge>
+                <jhi-chargemoney *ngSwitchCase="10" [titleCase]="1" [reportsWidth]="p.width" [index]="index" (widthChange)="childComWidthChange($event)" (typeChange)="childComTypeChange($event)" (delReport)="delChild($event)"></jhi-chargemoney>
             </div>
         </div>
     </div>

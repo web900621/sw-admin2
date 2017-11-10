@@ -29,8 +29,8 @@ export class ManualinputComponent implements OnInit {
     ngOnInit() {
         this.manualinputService.getManualinputBooks().subscribe((res) => {
             this.wc = res.json().data;
-            this.ycwkz = res.json().data.slice(2, -3);
-            this.ykz = res.json().data.slice(4, -8);
+            // this.ycwkz = res.json().data.slice(2, -3);
+            // this.ykz = res.json().data.slice(4, -8);
         });
         this.totlecbs = 300;
         this.ycbs = 144;

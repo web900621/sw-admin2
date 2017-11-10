@@ -21,6 +21,7 @@ export class InvoicedumpedComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.invoiceDumpedyy = [
       {label: '作废原因1', value: '0101'},
       {label: '作废原因2', value: '0102'},

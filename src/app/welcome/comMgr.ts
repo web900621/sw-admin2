@@ -28,6 +28,8 @@ import {ChargeComponent} from './reports/charge/charge.component';
 import {ChargemoneyComponent} from './reports/chargemoney/chargemoney.component';
 import {BlankreportsComponent} from './reports/blankreports/blankreports.component';
 import {DiyreportsComponent} from './diyreports/diyreports.component';
+import {PrintComponent} from './coms/fpgl/print/print.component';
+
 let coms = {
     'jtrksq': JtrksqComponent,
     'ysxzgl': YsxzglComponent,
@@ -41,7 +43,8 @@ let coms = {
     'writeoff': WriteoffComponent,
     'liquidateddamagesreduction': LiquidateddamagesreductionComponent,
     'notsalesadjustment': NotsalesadjustmentComponent,
-    'invoicedumped': InvoicedumpedComponent
+    'invoicedumped': InvoicedumpedComponent,
+    'print': PrintComponent
   }
 ;
 
@@ -75,7 +78,8 @@ const importComs = [
   ChargeComponent,
   ChargemoneyComponent,
   BlankreportsComponent,
-  DiyreportsComponent
+  DiyreportsComponent,
+  PrintComponent
 ];
 
 export {coms, importComs}

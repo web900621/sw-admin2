@@ -13,6 +13,7 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(111)
   }
 
   workspacehidden() {

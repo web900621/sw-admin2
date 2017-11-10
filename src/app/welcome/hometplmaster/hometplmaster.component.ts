@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ElementRef, HostListener} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import {HometplmasterService} from './hometplmaster.service';
 import {SelectItem} from 'primeng/primeng';
 import * as echarts from 'echarts';
@@ -6,7 +6,7 @@ import * as echarts from 'echarts';
 @Component({
   selector: 'app-hometplmaster',
   templateUrl: './hometplmaster.component.html',
-  styleUrls: ['./hometplmaster.component.scss']
+  styleUrls: ['./hometplmaster.component.scss'],
 })
 export class HometplmasterComponent implements OnInit {
   @ViewChild('child1') echart_ref: ElementRef;
@@ -61,6 +61,7 @@ export class HometplmasterComponent implements OnInit {
     this.echart = echarts.init(this.homeEchart.nativeElement);
     this.echart.showLoading();
     this.echartSetOpt();
+    console.log(this.echart)
   }
   echartSetOpt(){
     this.echart.hideLoading();
@@ -248,5 +249,9 @@ export class HometplmasterComponent implements OnInit {
     this.echart_ref.nativeElement.style.height = (this.innerHeight) + 'px';
     this.apps_ref.nativeElement.style.height = Math.floor(this.innerHeight / 3 * 1.65) + 'px';
     this.notic_ref.nativeElement.style.height = Math.floor(this.innerHeight / 3 * 1.35) + 'px';
+  }
+  ngOnDestroy() {
+    echarts.dispose(this.homeEchart.nativeElement);
+    console.log(this.echart)
   }
 }

@@ -1,0 +1,10 @@
+<div [ngClass]="{'componentHidden':navtabService.selectId!=this.appid}">
+
+  <h1>
+    print works!
+  </h1>
+  <div class="my-btn-group">
+    <button pButton type="button" label="打印" class="ui-button-info" icon="fa-print"
+            iconPos="left" (click)="print()"></button>
+  </div>
+</div>

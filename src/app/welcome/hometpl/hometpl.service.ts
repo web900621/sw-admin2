@@ -8,5 +8,6 @@ export class HometplService {
   }
   getdata() {
     return this.http.get('./data/portal/toll.json')
+    // return this.http.get('./data/portal/master.json')
   }
 }
